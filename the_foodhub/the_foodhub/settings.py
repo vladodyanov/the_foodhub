@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'the_foodhub.web',
+    'the_foodhub.accounts',
 ]
 
 MIDDLEWARE = [

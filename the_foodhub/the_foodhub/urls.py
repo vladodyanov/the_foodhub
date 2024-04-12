@@ -21,4 +21,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('the_foodhub.web.urls')),
+    path('', include('the_foodhub.accounts.urls')),
 ]
