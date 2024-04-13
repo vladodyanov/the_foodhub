@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth import admin as auth_admin, get_user_model
 
+from the_foodhub.accounts.models import Profile
+
 UserModel = get_user_model()
 
 
@@ -13,3 +15,6 @@ class AppUserAdmin(auth_admin.UserAdmin):
     filter_horizontal = ()
     list_filter = ()
     fieldsets = ()
+
+
+admin.site.register(Profile)
