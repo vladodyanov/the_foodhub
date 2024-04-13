@@ -157,7 +157,6 @@ class Profile(models.Model):
 
     user = models.OneToOneField(
         FoodHubUser,
-        primary_key=True,
         on_delete=models.CASCADE,
         blank=True,
         null=True,
