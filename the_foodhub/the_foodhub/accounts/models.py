@@ -77,6 +77,91 @@ class FoodHubUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
         return self.email
 
 
+class Profile(models.Model):
+    MAX_ADDRESS_LENGTH = 50
+    MAX_COUNTRY_LENGTH = 20
+    MAX_STATE_LENGTH = 20
+    MAX_REGION_LENGTH = 20
+    MAX_CITY_LENGTH = 20
+    MAX_PIN_CODE_LENGTH = 6
+    MAX_LONGITUDE_LENGTH = 20
+    MAX_LATITUDE_LENGTH = 20
 
+    profile_picture = models.ImageField(
+        upload_to='users/profile_pictures/',
+        blank=True,
+        null=True
+    )
 
+    cover_photo = models.ImageField(
+        upload_to='users/cover_photos/',
+        blank=True,
+        null=True
+    )
 
+    address_line_1 = models.CharField(
+        max_length=MAX_ADDRESS_LENGTH,
+        blank=True,
+        null=True
+    )
+
+    address_line_2 = models.CharField(
+        max_length=MAX_ADDRESS_LENGTH,
+        blank=True,
+        null=True
+    )
+
+    country = models.CharField(
+        max_length=MAX_COUNTRY_LENGTH,
+        blank=True,
+        null=True
+    )
+
+    region = models.CharField(
+        max_length=MAX_REGION_LENGTH,
+        blank=True,
+        null=True
+    )
+
+    city = models.CharField(
+        max_length=MAX_CITY_LENGTH,
+        blank=True,
+        null=True
+    )
+
+    pin_code = models.CharField(
+        max_length=MAX_PIN_CODE_LENGTH,
+        blank=True,
+        null=True
+    )
+
+    latitude = models.CharField(
+        max_length=MAX_LATITUDE_LENGTH,
+        blank=True,
+        null=True
+    )
+
+    longitude = models.CharField(
+        max_length=MAX_LONGITUDE_LENGTH,
+        blank=True,
+        null=True
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    modified_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    user = models.OneToOneField(
+        FoodHubUser,
+        primary_key=True,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+    )
+
+    def __str__(self):
+        return self.user.email
