@@ -11,9 +11,7 @@ class SignUpUserView(views.CreateView):
     template_name = 'accounts/signup_user.html'
     form_class = FoodHubUserCreationForm
     queryset = Profile.objects.all()
-
-    def get_success_url(self):
-        return reverse_lazy('index')
+    success_url = reverse_lazy('index')
 
     def form_valid(self, form):
         result = super().form_valid(form)
