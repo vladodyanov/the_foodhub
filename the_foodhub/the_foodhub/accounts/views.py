@@ -4,7 +4,7 @@ from django.urls import reverse_lazy, reverse
 from django.views import generic as views
 
 from the_foodhub.accounts.forms import FoodHubUserCreationForm
-from the_foodhub.accounts.models import Profile
+from the_foodhub.accounts.models import Profile, FoodHubUser
 
 
 class SignUpUserView(views.CreateView):
@@ -14,9 +14,11 @@ class SignUpUserView(views.CreateView):
     success_url = reverse_lazy('index')
 
     def form_valid(self, form):
-        result = super().form_valid(form)
-        login(self.request, form.instance)
-        return result
+        user = form.save(commit=False)
+        user.role = FoodHubUser.CUSTOMER
+        user.save()
+        login(self.request, user)
+        return super().form_valid(form)
 
 
 class SignInUserView(auth_views.LoginView):

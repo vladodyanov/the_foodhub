@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>FoodBakery</title>
+	<title>Account Setting</title>
 	<!-- Google Font Family Link Start -->
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800">
@@ -34,13 +34,19 @@
 	<!-- Pretty Photo Link Start-->
 	<link href="assets/css/prettyPhoto.css" rel="stylesheet">
 	<!-- Pretty Photo Link End-->
+	<!-- Daterange Picker Link Start-->
+	<link href="assets/css/daterangepicker.css" rel="stylesheet">
+	<!-- Daterange Picker Link End-->
+	<!-- Pretty Photo Link Start-->
+	<link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+	<!-- Pretty Photo Link End-->
 	<!-- Themes / plugin Link Start-->
 	<link href="style.css" rel="stylesheet">
 	<link href="assets/css/cs-foodbakery-plugin.css" rel="stylesheet">
 	<link href="assets/css/color.css" rel="stylesheet">
 	<link href="assets/css/widget.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet">
-	<link href="assets/css/rtl.css" rel="stylesheet">
+	<!-- <link href="assets/css/rtl.css" rel="stylesheet"> -->
 	<!-- Themes / plugin Link End-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="assets/js/modernizr.js"></script>
@@ -65,7 +71,7 @@
 						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 							<div class="logo">
 								<figure>
-									<a href="home.html" class="light-logo">
+									<a href="../home.html" class="light-logo">
 										<img src="assets/extra-images/main-logo.png" alt="FoodBakery">
 									</a>
 								</figure>
@@ -76,7 +82,7 @@
 										<li>
 											<a href="#">Demos</a>
 											<ul>
-												<li><a href="home.html">Food Bakery</a></li>
+												<li><a href="../home.html">Food Bakery</a></li>
 												<li><a href="mexican-restaurant.html">Mexican Restaurant</a></li>
 												<li><a href="foodstop.html">Food Stop</a></li>
 												<li><a href="rtl.html">Rtl Demo</a></li>
@@ -259,13 +265,13 @@
 												Buyer Demo
 											</a>
 											<ul>
-												<li class="active"><a href="buyer-dashboard.html"><i class="icon-dashboard3"></i>Dashboard</a></li>
+												<li><a href="buyer-dashboard.html"><i class="icon-dashboard3"></i>Dashboard</a></li>
 												<li><a href="buyer-bookings.html" class="btn-edit-profile"><i class="icon-file-text2"></i>My Bookings</a></li>
 												<li><a href="buyer-reviews.html" class="btn-edit-profile"><i class="icon-comment2"></i>My Reviews</a></li>
 												<li><a href="buyer-orders.html" class="btn-edit-profile"><i class="icon-add_shopping_cart"></i>My Orders</a></li>
 												<li><a href="buyer-shortlists.html"><i class="icon-heart"></i>Shortlists</a></li>
 												<li><a href="buyer-statement.html"><i class="icon-file-text22"></i>Statement</a></li>
-												<li><a href="buyer-account-setting.html"><i class="icon-build"></i>Account Settings</a></li>
+												<li class="active"><a href="buyer-account-setting.html"><i class="icon-build"></i>Account Settings</a></li>
 												<li><a href="registration.html"><i class="icon-log-out"></i>Sign out</a></li>
 											</ul>
 										</li>
@@ -317,13 +323,13 @@
 							<div class="user-account-nav user-account-sidebar">
 								<div class="user-nav-list">
 									<ul>
-										<li class="active"><a href="buyer-dashboard.html"><i class="icon-dashboard3"></i>Dashboard</a></li>
+										<li><a href="buyer-dashboard.html"><i class="icon-dashboard3"></i>Dashboard</a></li>
 										<li><a href="buyer-bookings.html" class="btn-edit-profile"><i class="icon-file-text2"></i>My Bookings</a></li>
 										<li><a href="buyer-reviews.html" class="btn-edit-profile"><i class="icon-comment2"></i>My Reviews</a></li>
 										<li><a href="buyer-orders.html" class="btn-edit-profile"><i class="icon-add_shopping_cart"></i>My Orders</a></li>
 										<li><a href="buyer-shortlists.html"><i class="icon-heart"></i>Shortlists</a></li>
 										<li><a href="buyer-statement.html"><i class="icon-file-text22"></i>Statement</a></li>
-										<li><a href="buyer-account-setting.html"><i class="icon-build"></i>Account Settings</a></li>
+										<li class="active"><a href="buyer-account-setting.html"><i class="icon-build"></i>Account Settings</a></li>
 										<li><a id="profile_delete" href="#"><i class="icon-delete"></i>Delete Profile</a></li>
 										<li><a href="registration.html"><i class="icon-log-out"></i>Sign out</a></li>
 									</ul>
@@ -331,380 +337,229 @@
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-							<div class="user-dashboard">
+							<div class="user-dashboard loader-holder">
 								<div class="user-holder">
-									<div id="close-me" class="user-message" style="background-color:#1e73be;">
-										<a class="close close-div" href="#"><i class="icon-cross-out"></i></a>
-										<h2>Welcome to your account</h2>
-										<p>My Account gives you quick access to settings and tools for managing your Account like [Change address] and [Change password] . You can [manage Orders] Booking, and access even more [Shortlists] and [Statements] and may more.</p>
-									</div>
-									<div class="row">
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-											<div class="user-suggest-list listing simple">
-												<div class="element-title">
-													<h5>Suggested Restaurants</h5>
-													<span>Define <em data-target="#suggestions-box" data-toggle="modal">Search criteria</em> to search for specific</span>
-												</div>
-												<ul class="user-suggest-list-holder">
-													<li>
-														<div class="suggest-list-holder">
-															<div class="img-holder">
-																<figure>
-																	<a href="listings.html"><img src="assets/extra-images/fb-restaurant-06.jpg" alt=""> </a>
-																</figure>
-															</div>
-															<div class="text-holder">
-																<div class="post-title">
-																	<h5><a href="listings.html">Dragon Express</a></h5>
-																</div>
-																<span class="post-categories"> Apple Juice , Carrot Juice , Ice Cream </span>
-																<div class="list-option">
-																	<a href="#" class="shortlist-btn shortlisted"><i class="icon-heart4"></i></a>
-																	<a href="listings.html" class="viewmenu-btn">View Menu</a>
-																</div>
-																<div class="delivery-potions">
-																	<div class="post-time">
-																		<i class="icon-motorcycle"></i>
-																		<div class="time-tooltip">
-																			<div class="time-tooltip-holder"><b class="tooltip-label">Delivery time</b><b class="tooltip-info">10</b> </div>
-																		</div>
-																	</div>
-																	<div class="post-time">
-																		<i class="icon-clock4"></i>
-																		<div class="time-tooltip">
-																			<div class="time-tooltip-holder"> <b class="tooltip-label">Pickup time</b> <b class="tooltip-info">15</b> </div>
-																		</div>
-																	</div>
-																	<span>10-11 Bethel Square, Brecon LD3 7JP, UK</span>
-																</div>
-															</div>
-														</div>
-													</li>
-													<li>
-														<div class="suggest-list-holder">
-															<div class="img-holder">
-																<figure>
-																	<a href="listings.html"><img src="assets/extra-images/listing-logo18.png" alt=""> </a>
-																</figure>
-															</div>
-															<div class="text-holder">
-																<div class="post-title">
-																	<h5><a href="listings.html">Restaurant Demo </a></h5>
-																</div>
-																<span class="post-categories"> Type of food : Apple Juice</span>
-																<div class="list-option">
-																	<a href="#" class="shortlist-btn shortlist-btn"><i class="icon-heart-o"></i> </a>
-																	<a href="listings.html" class="viewmenu-btn">View Menu</a>
-																</div>
-																<div class="delivery-potions">
-																	<div class="post-time">
-																		<i class="icon-motorcycle"></i>
-																		<div class="time-tooltip">
-																			<div class="time-tooltip-holder"><b class="tooltip-label">Delivery time</b><b class="tooltip-info">10</b> </div>
-																		</div>
-																	</div>
-																	<div class="post-time">
-																		<i class="icon-clock4"></i>
-																		<div class="time-tooltip">
-																			<div class="time-tooltip-holder"> <b class="tooltip-label">Pickup time</b> <b class="tooltip-info">15</b> </div>
-																		</div>
-																	</div>
-																	<span>Totnes, Devon</span>
-																</div>
-															</div>
-														</div>
-													</li>
-													<li>
-														<div class="img-holder">
-															<figure>
-																<a href="#"> <img src="assets/extra-images/fb-restaurant-01.jpg" class="img-list wp-post-image" alt=""> </a>
-															</figure>
-														</div>
-														<div class="text-holder">
-															<div class="post-title">
-																<h5>
-																	<a href="listing-detail.html">Jet’s Kitchen</a>
-																</h5>
-															</div>
-															<span class="post-categories"><span>Type of food :
-																</span> Chines
-																Soup, Egg Fry, Fish Fry</span>
-															<div class="delivery-potions">
-																<div class="post-time">
-																	<i class="icon-motorcycle"></i>
-																	<div class="time-tooltip">
-																		<div class="time-tooltip-holder"> <b class="tooltip-label">Delivery
-																				time</b> <b class="tooltip-info">Your order will
-																				be
-																				delivered in 10 minutes.</b> </div>
-																	</div>
-																</div>
-																<div class="post-time">
-																	<i class="icon-clock4"></i>
-																	<div class="time-tooltip">
-																		<div class="time-tooltip-holder"> <b class="tooltip-label">Pickup
-																				time</b> <b class="tooltip-info">You
-																				can pickup order in
-																				15 minutes.</b> </div>
-																	</div>
-																</div>
-																<span>Montrose, Angus</span>
-															</div>
-														</div>
-														<div class="list-option">
-															<a href="javascript:void(0);" class="shortlist-btn" data-toggle="modal" data-target="#sign-in"><i class="icon-heart-o"></i> </a>
-															<a href="#" class="viewmenu-btn text-color">View Menu</a>
-														</div>
-													</li>
-													<li>
-														<div class="img-holder">
-															<figure>
-																<a href="#"><img src="assets/extra-images/fb-restaurant-04.jpg" class="img-list wp-post-image" alt=""> </a>
-															</figure>
-														</div>
-														<div class="text-holder">
-															<div class="post-title">
-																<h5>
-																	<a href="listing-detail.html">Golden Chick Fries</a>
-																	<span class="sponsored text-color">Sponsored</span>
-																</h5>
-															</div>
-															<span class="post-categories"><span>Type of food :
-																</span>
-																Doughnut, Hot Dogs, Ice Cream</span>
-															<div class="delivery-potions">
-																<div class="post-time">
-																	<i class="icon-motorcycle"></i>
-																	<div class="time-tooltip">
-																		<div class="time-tooltip-holder"> <b class="tooltip-label">Delivery
-																				time</b>
-																			<b class="tooltip-info">Your order will
-																				be
-																				delivered in 10 minutes.</b>
-																		</div>
-																	</div>
-																</div>
-																<div class="post-time">
-																	<i class="icon-clock4"></i>
-																	<div class="time-tooltip">
-																		<div class="time-tooltip-holder"> <b class="tooltip-label">Pickup
-																				time</b>
-																			<b class="tooltip-info">You can pickup
-																				order in
-																				15 minutes.</b>
-																		</div>
-																	</div>
-																</div>
-																<span>Leyton, Greater London</span>
-															</div>
-														</div>
-														<div class="list-option">
-															<a href="javascript:void(0);" class="shortlist-btn" data-toggle="modal" data-target="#sign-in">
-																<i class="icon-heart-o"></i> </a>
-															<a href="#" class="viewmenu-btn text-color">View Menu</a>
-														</div>
-													</li>
-													<li>
-														<div class="img-holder">
-															<figure>
-																<a href="#"><img src="assets/extra-images/xlisting-logo03.png.pagespeed.ic_.aT-o9LinEJ.png" class="img-list wp-post-image" alt=""> </a>
-															</figure>
-														</div>
-														<div class="text-holder">
-															<div class="post-title">
-																<h5>
-																	<a href="listing-detail.html">Nature Healthy Food</a>
-																</h5>
-															</div>
-															<span class="post-categories"><span>Type of food :
-																</span> Apple
-																Juice, Chicken Roast, Chines Soup, Magi</span>
-															<div class="delivery-potions">
-																<div class="post-time">
-																	<i class="icon-motorcycle"></i>
-																	<div class="time-tooltip">
-																		<div class="time-tooltip-holder"> <b class="tooltip-label">Delivery
-																				time</b> <b class="tooltip-info">Your order will
-																				be
-																				delivered in 10 minutes.</b> </div>
-																	</div>
-																</div>
-																<div class="post-time">
-																	<i class="icon-clock4"></i>
-																	<div class="time-tooltip">
-																		<div class="time-tooltip-holder"> <b class="tooltip-label">Pickup
-																				time</b> <b class="tooltip-info">You
-																				can pickup order in
-																				15 minutes.</b> </div>
-																	</div>
-																</div>
-																<span>Bristol, Bristol</span>
-															</div>
-														</div>
-														<div class="list-option">
-															<a href="javascript:void(0);" class="shortlist-btn" data-toggle="modal" data-target="#sign-in"><i class="icon-heart-o"></i> </a>
-															<a href="#" class="viewmenu-btn text-color">View Menu</a>
-														</div>
-													</li>
-													<li>
-														<div class="img-holder">
-															<figure>
-																<a href="#"><img src="assets/extra-images/fb-restaurant-09.png" class="img-list wp-post-image" alt=""> </a>
-															</figure>
-														</div>
-														<div class="text-holder">
-															<div class="post-title">
-																<h5>
-																	<a href="listing-detail.html">Burger King</a>
-																</h5>
-															</div>
-															<span class="post-categories"><span>Type of food :
-																</span> Beef
-																Roast, Doughnut, Prawns</span>
-															<div class="delivery-potions">
-																<div class="post-time">
-																	<i class="icon-motorcycle"></i>
-																	<div class="time-tooltip">
-																		<div class="time-tooltip-holder"> <b class="tooltip-label">Delivery
-																				time</b> <b class="tooltip-info">Your order will
-																				be
-																				delivered in 10 minutes.</b> </div>
-																	</div>
-																</div>
-																<div class="post-time">
-																	<i class="icon-clock4"></i>
-																	<div class="time-tooltip">
-																		<div class="time-tooltip-holder"> <b class="tooltip-label">Pickup
-																				time</b> <b class="tooltip-info">You
-																				can pickup order in
-																				15 minutes.</b> </div>
-																	</div>
-																</div>
-																<span>Bridport, Dorset</span>
-															</div>
-														</div>
-														<div class="list-option">
-															<a href="javascript:void(0);" class="shortlist-btn" data-toggle="modal" data-target="#sign-in">
-																<i class="icon-heart-o"></i> </a>
-															<a href="#" class="viewmenu-btn text-color">View Menu</a>
-														</div>
-													</li>
-												</ul>
-											</div>
-											<ul class="pagination">
-												<li class="active"><a>1</a></li>
-												<li><a href="#">2</a></li>
-												<li><a href="#">3</a></li>
-												<li><span class="page-numbers dots">…</span></li>
-												<li><a href="#">24</a></li>
-												<li><a href="#">Next </a></li>
-											</ul>
+									<div class="user-profile">
+										<div class="element-title has-border">
+											<h5>Account Settings</h5>
 										</div>
-									</div>
-									<div class="modal fade" id="suggestions-box" tabindex="-1" role="dialog" style="display: none;">
-										<div class="modal-dialog" role="document">
-											<div class="login-form">
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-															<span aria-hidden="true">×</span>
-														</button>
-														<h3 class="modal-title">Suggested Restaurants Settings</h3>
-													</div>
-													<div class="modal-body">
-														<div class="status status-message"></div>
-														<form method="post" class="wp-user-form webkit" id="ControlForm_suggestions">
-															<div class="input-filed">
-																<ul class="form-elements" id="wrapper_suggested_restaurants_categories">
-																	<li class="to-label"><label>Categories for suggestions</label></li>
-																	<li class="to-field multiple"><select required="required" class="multiple" multiple="multiple" id="foodbakery_suggested_restaurants_categories" name="foodbakery_suggested_restaurants_categories[]" style="height: 110px !important; display: none;" data-placeholder="Please Select">
-																			<option value="all_categories">All Categories</option>
-																			<option value="apple-juice">Apple Juice</option>
-																			<option selected="selected" value="bb-q">BB.Q</option>
-																			<option value="beef-roast">Beef Roast</option>
-																			<option selected="selected" value="carrot-juice">Carrot Juice</option>
-																			<option value="cheese-burger">Cheese Burger</option>
-																			<option value="chicken-roast">Chicken Roast</option>
-																			<option value="chines-soup">Chines Soup</option>
-																			<option value="cold-coffee">Cold Coffee</option>
-																			<option value="cold-drink">Cold Drink</option>
-																			<option value="cupcake">Cupcake</option>
-																			<option value="doughnut">Doughnut</option>
-																			<option value="drum-stick">Drum Stick</option>
-																			<option value="egg-fry">Egg Fry</option>
-																			<option value="fish-fry">Fish Fry</option>
-																			<option value="fresh-juice">Fresh Juice</option>
-																			<option value="hot-dogs">Hot Dogs</option>
-																			<option value="ice-cream">Ice Cream</option>
-																			<option value="magi">Magi</option>
-																			<option value="noodles">Noodles</option>
-																			<option value="pastry">Pastry</option>
-																			<option value="pizza">Pizza</option>
-																			<option value="potato-fries">Potato Fries</option>
-																			<option value="prawns">Prawns</option>
-																			<option value="sham-pane">Sham pane</option>
-																			<option value="shawarma">Shawarma</option>
-																			<option value="soda-water">Soda water</option>
-																			<option value="stakes">Stakes</option>
-																			<option value="steam-roast">Steam Roast</option>
-																			<option value="tea">Tea</option>
-																		</select>
-																		<div class="chosen-container chosen-container-multi" style="width: 0px;" title="" id="foodbakery_suggested_restaurants_categories_chosen">
-																			<ul class="chosen-choices">
-																				<li class="search-choice"><span>BB.Q</span><a class="search-choice-close" data-option-array-index="2"></a></li>
-																				<li class="search-choice"><span>Carrot Juice</span><a class="search-choice-close" data-option-array-index="4"></a></li>
-																				<li class="search-field"><input type="text" value="Please Select" class="" autocomplete="off" style="width: 25px;"></li>
-																			</ul>
-																			<div class="chosen-drop">
-																				<ul class="chosen-results">
-																					<li class="active-result" data-option-array-index="0">All Categories</li>
-																					<li class="active-result" data-option-array-index="1">Apple Juice</li>
-																					<li class="result-selected" data-option-array-index="2">BB.Q</li>
-																					<li class="active-result" data-option-array-index="3">Beef Roast</li>
-																					<li class="result-selected" data-option-array-index="4">Carrot Juice</li>
-																					<li class="active-result" data-option-array-index="5">Cheese Burger</li>
-																					<li class="active-result" data-option-array-index="6">Chicken Roast</li>
-																					<li class="active-result" data-option-array-index="7">Chines Soup</li>
-																					<li class="active-result" data-option-array-index="8">Cold Coffee</li>
-																					<li class="active-result" data-option-array-index="9">Cold Drink</li>
-																					<li class="active-result" data-option-array-index="10">Cupcake</li>
-																					<li class="active-result" data-option-array-index="11">Doughnut</li>
-																					<li class="active-result" data-option-array-index="12">Drum Stick</li>
-																					<li class="active-result" data-option-array-index="13">Egg Fry</li>
-																					<li class="active-result" data-option-array-index="14">Fish Fry</li>
-																					<li class="active-result" data-option-array-index="15">Fresh Juice</li>
-																					<li class="active-result" data-option-array-index="16">Hot Dogs</li>
-																					<li class="active-result" data-option-array-index="17">Ice Cream</li>
-																					<li class="active-result" data-option-array-index="18">Magi</li>
-																					<li class="active-result" data-option-array-index="19">Noodles</li>
-																					<li class="active-result" data-option-array-index="20">Pastry</li>
-																					<li class="active-result" data-option-array-index="21">Pizza</li>
-																					<li class="active-result" data-option-array-index="22">Potato Fries</li>
-																					<li class="active-result" data-option-array-index="23">Prawns</li>
-																					<li class="active-result" data-option-array-index="24">Sham pane</li>
-																					<li class="active-result" data-option-array-index="25">Shawarma</li>
-																					<li class="active-result" data-option-array-index="26">Soda water</li>
-																					<li class="active-result" data-option-array-index="27">Stakes</li>
-																					<li class="active-result" data-option-array-index="28">Steam Roast</li>
-																					<li class="active-result" data-option-array-index="29">Tea</li>
-																				</ul>
-																			</div>
-																		</div>
-																	</li>
-																</ul>
+										<div class="row">
+											<form id="publisher_profile">
+												<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+													<div class="row">
+														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+															<div class="field-holder">
+																<label>Full Name*</label>
+																<input type="text" class="foodbakery-dev-req-field" value="">
 															</div>
-															<div class="input-filed">
-																<label>Number of suggestions to show</label>
-																<input type="text" tabindex="11" placeholder="example 20" class="form-control" id="suggested_restaurants_max_restaurants" name="suggested_restaurants_max_restaurants" value="7"> </div>
-															<div class="input-filed">
-																<div class="save-search-criteria input-button-loader">
-																	<input type="button" class="btn-suggestions-settings cs-bgcolor" name="submit-suggestions-settings" value="Save Settings">
-																</div>
+														</div>
+														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+															<div class="field-holder">
+																<label>Email Address *</label>
+																<input type="text" class="foodbakery-dev-req-field" value="">
 															</div>
-														</form>
+														</div>
+														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+															<div class="field-holder">
+																<label>Phone Number *</label>
+																<input type="text" class="foodbakery-dev-req-field" value="">
+															</div>
+														</div>
 													</div>
 												</div>
-											</div>
+												<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+													<div class="user-profile-images">
+														<div class="current-img">
+															<div class="row mt">
+																<div id="cropContainerModal" data-def-img="assets/extra-images/team-medium-img1.jpg" data-img-type="default">
+																	<figure>
+																		<a><img src="assets/extra-images/team-medium-img1.jpg" alt=""></a>
+																	</figure>
+																</div>
+															</div>
+															<span>Upload a profile picture or choose one of the following</span>
+														</div>
+														<div class="upload-file">
+															<input id="file-1" type="file" class="hide">
+															<button type="button"><span>Upload Picture</span></button>
+														</div>
+														<ul class="uploaded-img">
+															<li>
+																<figure>
+																	<img data-attachment_id="2570" src="assets/extra-images/icon1.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2571" src="assets/extra-images/icon2.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2572" src="assets/extra-images/icon3.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2573" src="assets/extra-images/icon4.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2574" src="assets/extra-images/icon5.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2575" src="assets/extra-images/icon6.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2576" src="assets/extra-images/icon7.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2577" src="assets/extra-images/icon8.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2578" src="assets/extra-images/icon9.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2579" src="assets/extra-images/icon10.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2580" src="assets/extra-images/icon11.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2581" src="assets/extra-images/icon12.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2582" src="assets/extra-images/icon13.png" alt="">
+																</figure>
+															</li>
+															<li>
+																<figure>
+																	<img data-attachment_id="2583" src="assets/extra-images/icon14.png" alt="">
+																</figure>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<div class="opt-conts">
+														<div class="row">
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																<div class="field-holder">
+																	<label>Country *</label>
+																	<div class="select-holder">
+																		<select data-placeholder="Select Country" class="form-control chosen-select form-select-country dir-map-search foodbakery-dev-req-field" id="loc_country_publisher" name="foodbakery_post_loc_country_publisher">
+																			<option value="">Select Country</option>
+																			<option value="barry" data-name="">Barry</option>
+																			<option value="cardiff" data-name="">Cardiff</option>
+																			<option value="cowbridge" data-name="">Cowbridge</option>
+																			<option value="england" data-name="">England</option>
+																			<option value="llantwit-major" data-name="">Llantwit Major</option>
+																			<option value="northern-ireland" data-name="">Northern Ireland</option>
+																			<option value="penarth" data-name="">Penarth</option>
+																			<option value="scotland" data-name="">Scotland</option>
+																			<option value="wales" data-name="">Wales</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+																<div class="field-holder">
+																	<label>State</label>
+																	<div class="select-holder">
+																		<select data-placeholder="Select State" class="chosen-select">
+																			<option value="">Select State</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+																<div class="field-holder">
+																	<label>City</label>
+																	<div class="select-holder">
+																		<select data-placeholder="Select City" class="chosen-select">
+																			<option value="">Select City</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+																<div class="field-holder">
+																	<label>Latitude</label>
+																	<input type="text" placeholder="Latitude" class="form-control gllpLatitude" value="">
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+																<div class="field-holder">
+																	<label>Longitude</label>
+																	<input type="text" placeholder="Longitude" class="form-control gllpLongitude" value="">
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+																<div class="field-holder">
+																	<label>Find On Map</label>
+																	<input type="text" placeholder="Type Your Address" class="foodbakery-search-location">
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+																<div class="field-holder"></div>
+																<div class="field-holder search-location-map input-button-loader">
+																	<input type="button" class="acc-submit cs-section-update cs-color gllpSearchButton" value="Search Location">
+																</div>
+															</div>
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																<div class="cs-map-section">
+																	<img style="width:100%;height: 100%;" src="assets/extra-images/map-location.png" alt="">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<div class="element-title has-border">
+														<h5>Change Password</h5>
+													</div>
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<div class="field-holder">
+														<label> Current Password*</label>
+														<input type="password">
+													</div>
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<div class="field-holder">
+														<label> New Password*</label>
+														<input type="password">
+													</div>
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<div class="field-holder">
+														<label> Confirm New Password* </label>
+														<input type="password">
+													</div>
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<div class="field-holder">
+														<button name="button" type="button" class="btn-submit">Save</button>
+													</div>
+												</div>
+											</form>
 										</div>
 									</div>
 								</div>
@@ -833,6 +688,61 @@
 		<!-- Footer End -->
 	</div>
 	<!-- Modal Popup Start -->
+	<div class="modal fade menu-order-detail menu-order-info" id="booking-detail-22603" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h2><a>Booking Detail</a></h2>
+				</div>
+				<div class="modal-body booking-modal-body">
+					<div class="order-detail-inner">
+						<h3>Restaurant Demo </h3>
+						<ul class="order-detail-options">
+							<li>
+								<strong>Booking ID :</strong>
+								<span>22603</span>
+							</li>
+							<li>
+								<strong>Booking Date :</strong>
+								<span>Apr 9,2020 6:40 AM </span>
+							</li>
+						</ul>
+						<h3>Customer Deatil</h3>
+						<ul class="order-detail-options">
+							<li>
+								<strong>First Name:</strong>
+								<span>Mark</span>
+							</li>
+							<li>
+								<strong>Last Name:</strong>
+								<span>Jose</span>
+							</li>
+							<li>
+								<strong>Email:</strong>
+								<span>markjose@gmail.com</span>
+							</li>
+							<li>
+								<span>4-guest</span>
+							</li>
+							<li>
+								<span>Apr 30,2020 11:00 AM</span>
+							</li>
+							<li class="order-detail-message">
+								<strong>Instructions:</strong>
+								<span>I need to book a special table for my friends. Make it some special.!</span>
+							</li>
+						</ul>
+						<div class="booking-status-holder">
+							<div class="booking-status-process booking-status">
+								<p style="background:#1e73be;">Your booking is Processing.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="id_confrmdiv" style="display: none;">
 		<div class="cs-confirm-container">
 			<i class="icon-sad"></i>
@@ -855,6 +765,8 @@
 	<script src="assets/js/skills-progress.js"></script>
 	<script src="assets/js/bootstrap-slider.js"></script>
 	<script src="assets/js/wow.js"></script>
+	<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="assets/js/daterangepicker.js"></script>
 	<script src="assets/js/functions-plugin.js"></script>
 	<script src="assets/js/functions.js"></script>
 </body>

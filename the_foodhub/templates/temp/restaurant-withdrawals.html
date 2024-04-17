@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Change Password</title>
+	<title>Withdrawals</title>
 	<!-- Google Font Family Link Start -->
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800">
@@ -71,7 +71,7 @@
 						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 							<div class="logo">
 								<figure>
-									<a href="home.html" class="light-logo">
+									<a href="../home.html" class="light-logo">
 										<img src="assets/extra-images/main-logo.png" alt="FoodBakery">
 									</a>
 								</figure>
@@ -82,7 +82,7 @@
 										<li>
 											<a href="#">Demos</a>
 											<ul>
-												<li><a href="home.html">Food Bakery</a></li>
+												<li><a href="../home.html">Food Bakery</a></li>
 												<li><a href="mexican-restaurant.html">Mexican Restaurant</a></li>
 												<li><a href="foodstop.html">Food Stop</a></li>
 												<li><a href="rtl.html">Rtl Demo</a></li>
@@ -271,11 +271,11 @@
 												<li><a href="restaurant-bookings.html"><i class="icon-file-text2 "></i>Bookings</a></li>
 												<li><a href="restaurant-reviews.html"><i class="icon-comment2"></i>Reviews</a></li>
 												<li><a href="restaurant-memberships.html"><i class="icon-card_membership"></i>Memberships</a></li>
-												<li><a href="restaurant-withdrawals.html"><i class="icon-bill"></i>Withdrawals</a></li>
+												<li class="active"><a href="restaurant-withdrawals.html"><i class="icon-bill"></i>Withdrawals</a></li>
 												<li><a href="restaurant-earnings.html"><i class="icon-money"></i>Earnings</a></li>
 												<li><a href="restaurant-statement.html"><i class="icon-file-text22"></i>Statement</a></li>
 												<li><a href="restaurant-team-management.html"><i class="icon-flow-tree"></i>Team Management</a></li>
-												<li class="active"><a href="restaurant-change-password.html"><i class="icon-unlock-alt"></i>Change Password</a></li>
+												<li><a href="restaurant-change-password.html"><i class="icon-unlock-alt"></i>Change Password</a></li>
 												<li><a class="logout-btn" href="registration.html"><i class="icon-log-out"></i>Signout</a></li>
 											</ul>
 										</li>
@@ -334,11 +334,11 @@
 										<li><a href="restaurant-bookings.html"><i class="icon-file-text2 "></i>Bookings</a></li>
 										<li><a href="restaurant-reviews.html"><i class="icon-comment2"></i>Reviews</a></li>
 										<li><a href="restaurant-memberships.html"><i class="icon-card_membership"></i>Memberships</a></li>
-										<li><a href="restaurant-withdrawals.html"><i class="icon-bill"></i>Withdrawals</a></li>
+										<li class="active"><a href="restaurant-withdrawals.html"><i class="icon-bill"></i>Withdrawals</a></li>
 										<li><a href="restaurant-earnings.html"><i class="icon-money"></i>Earnings</a></li>
 										<li><a href="restaurant-statement.html"><i class="icon-file-text22"></i>Statement</a></li>
 										<li><a href="restaurant-team-management.html"><i class="icon-flow-tree"></i>Team Management</a></li>
-										<li class="active"><a href="restaurant-change-password.html"><i class="icon-unlock-alt"></i>Change Password</a></li>
+										<li><a href="restaurant-change-password.html"><i class="icon-unlock-alt"></i>Change Password</a></li>
 										<li><a id="profile_delete" href="#"><i class="icon-delete"></i>Delete Profile</a></li>
 										<li><a class="logout-btn" href="registration.html"><i class="icon-log-out"></i>Signout</a></li>
 									</ul>
@@ -346,40 +346,60 @@
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-							<div class="user-dashboard loader-holder">
-								<div class="user-holder">
-									<div class="row">
-										<form>
-											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-												<div class="element-title has-border">
-													<h5>Change Password</h5>
+						<div class="user-dashboard loader-holder">
+							<div class="user-holder">
+								<div class="publisher-withdrawal-form">
+									<div class="element-title has-border right-filters-row">
+										<h5>Withdrawals</h5>
+										<div class="right-filters row pull-right">
+											<div class="col-lg-6 col-md-6 col-xs-6 text-right">
+												<button id="dev-open-withdraw-req-box" class="btn-submit" type="button">Withdrawal Request</button>
+											</div>
+											<div class="col-lg-6 col-md-6 col-xs-6">
+												<div class="input-field">
+													<i class="icon-angle-down"></i>
+													<input type="text" data-id="daterange223" id="daterange" value="" placeholder="Select Date Range">
+													<script>
+														$(function () {
+															$('input[data-id="daterange223"]').daterangepicker({
+																opens: 'left'
+															}, function (start, end, label) {
+																console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+															});
+														});
+													</script>
 												</div>
 											</div>
-											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-												<div class="field-holder">
-													<label> Current Password*</label>
-													<input type="password" class="foodbakery-dev-req-field">
-												</div>
-											</div>
-											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-												<div class="field-holder">
-													<label> New Password*</label>
-													<input type="password" class="foodbakery-dev-req-field">
-												</div>
-											</div>
-											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-												<div class="field-holder">
-													<label> Confirm New Password* </label>
-													<input type="password" class="foodbakery-dev-req-field">
-												</div>
-											</div>
-											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-												<div class="field-holder">
-													<button name="button" type="button" class="btn-submit">Save</button>
-												</div>
-											</div>
-										</form>
+										</div>
 									</div>
+								</div>
+								<div class="responsive-table">
+									<ul class="table-generic">
+										<li class="order-heading-titles">
+											<div>Id</div>
+											<div>Date</div>
+											<div>Amount</div>
+											<div>Status</div>
+										</li>
+										<li class="order-heading-titles">
+											<div>withdrawal-22623</div>
+											<div>Apr 9,2020</div>
+											<div>£10.00</div>
+											<div>Pending</div>
+										</li>
+										<li class="order-heading-titles">
+											<div>withdrawal-22622</div>
+											<div>Apr 9,2020</div>
+											<div>£10.00</div>
+											<div>Approved</div>
+										</li>
+										<li class="order-heading-titles">
+											<div>withdrawal-22621</div>
+											<div>Apr 9,2020</div>
+											<div>£20.00</div>
+											<div>Approved</div>
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
@@ -387,123 +407,124 @@
 				</div>
 			</div>
 		</div>
-		<!-- Main Section End -->
-		<!-- Footer Start -->
-		<footer id="footer" class="footer-style-2">
-			<div class="footer-widget">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="widget widget-newsletter">
-								<div class="widget-title">
-									<h5>Subscribe to our Newsletter</h5>
-								</div>
-								<div class="fieldset">
-									<form action="#">
-										<div class="field-holder">
-											<label>
-												<i class=" icon-envelope3"></i>
-												<input type="text" class="field-input" placeholder=" Enter Your Email Address...">
-											</label>
-										</div>
-										<div class="field-holder btn-holder">
-											<input class="subscribe-btn bgcolor" type="submit" value="Sign Up">
-										</div>
-									</form>
-								</div>
+	</div>
+	<!-- Main Section End -->
+	<!-- Footer Start -->
+	<footer id="footer" class="footer-style-2">
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="widget widget-newsletter">
+							<div class="widget-title">
+								<h5>Subscribe to our Newsletter</h5>
+							</div>
+							<div class="fieldset">
+								<form action="#">
+									<div class="field-holder">
+										<label>
+											<i class=" icon-envelope3"></i>
+											<input type="text" class="field-input" placeholder=" Enter Your Email Address...">
+										</label>
+									</div>
+									<div class="field-holder btn-holder">
+										<input class="subscribe-btn bgcolor" type="submit" value="Sign Up">
+									</div>
+								</form>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="widget widget_text">
-								<div class="widget-title">
-									<h5>About us</h5>
-								</div>
-								<div class="textwidget">Foodbakery is the business of food and restaurants.
-									Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
-									Explore restaurants, bars, and cafés by locality cum doctus civibus
-									efficiantur in imperdiet deterruisset. FoodBakery Just ordered me some grub
-								</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+						<div class="widget widget_text">
+							<div class="widget-title">
+								<h5>About us</h5>
+							</div>
+							<div class="textwidget">Foodbakery is the business of food and restaurants.
+								Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
+								Explore restaurants, bars, and cafés by locality cum doctus civibus
+								efficiantur in imperdiet deterruisset. FoodBakery Just ordered me some grub
 							</div>
 						</div>
-						<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-							<div class="widget widget-top-cities">
-								<div class="widget-title">
-									<h5>Popular Cities</h5>
-								</div>
-								<ul>
-									<li><a href="listings.html">Aberaeron</a></li>
-									<li><a href="listings.html">Aberdeenshire</a></li>
-									<li><a href="listings.html">Anston</a></li>
-									<li><a href="listings.html">Ascot</a></li>
-								</ul>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+						<div class="widget widget-top-cities">
+							<div class="widget-title">
+								<h5>Popular Cities</h5>
 							</div>
+							<ul>
+								<li><a href="listings.html">Aberaeron</a></li>
+								<li><a href="listings.html">Aberdeenshire</a></li>
+								<li><a href="listings.html">Anston</a></li>
+								<li><a href="listings.html">Ascot</a></li>
+							</ul>
 						</div>
-						<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-							<div class="widget widget-top-cities">
-								<div class="widget-title">
-									<h5>Popular Cuisines</h5>
-								</div>
-								<ul>
-									<li><a href="listings.html">BB.Q</a></li>
-									<li><a href="listings.html">ChickenRoast</a></li>
-									<li><a href="listings.html">Cold Coffee</a></li>
-									<li><a href="listings.html">Cold Drink</a></li>
-								</ul>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+						<div class="widget widget-top-cities">
+							<div class="widget-title">
+								<h5>Popular Cuisines</h5>
 							</div>
+							<ul>
+								<li><a href="listings.html">BB.Q</a></li>
+								<li><a href="listings.html">ChickenRoast</a></li>
+								<li><a href="listings.html">Cold Coffee</a></li>
+								<li><a href="listings.html">Cold Drink</a></li>
+							</ul>
 						</div>
-						<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-							<div class="widget widget-categories">
-								<div class="widget-title">
-									<h5>Menu</h5>
-								</div>
-								<ul>
-									<li><a href="blog-large.html">Blog Large</a></li>
-									<li><a href="blog-medium.html">Blog Medium</a></li>
-									<li><a href="blog-medium.html">Blog Masonry</a></li>
-									<li><a href="contact-us.html">Contact</a></li>
-									<li><a href="faq.html">FAQ’s</a></li>
-									<li><a href="how-it-works.html">How itworks</a></li>
-								</ul>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+						<div class="widget widget-categories">
+							<div class="widget-title">
+								<h5>Menu</h5>
 							</div>
+							<ul>
+								<li><a href="blog-large.html">Blog Large</a></li>
+								<li><a href="blog-medium.html">Blog Medium</a></li>
+								<li><a href="blog-medium.html">Blog Masonry</a></li>
+								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="faq.html">FAQ’s</a></li>
+								<li><a href="how-it-works.html">How itworks</a></li>
+							</ul>
 						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="widget widget-connect">
-								<div class="widget-title">
-									<h5> Connect</h5>
-								</div>
-								<ul>
-									<li><span class="bgcolor"><i class="icon-ring_volume"></i></span>
-										<p>+1 123 456 7892</p>
-									</li>
-									<li><span class="bgcolor"><i class="icon-envelope-o"></i></span>
-										<p><a href="#">support@chimpstudio.com</a>
-										</p>
-									</li>
-									<li><span class="bgcolor"><i class="icon-location-pin2"></i></span>
-										<p>33 - B, 2nd Floor, Saint Jhon Doe Appartments, Sussex, UK.26AL565C.</p>
-									</li>
-								</ul>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+						<div class="widget widget-connect">
+							<div class="widget-title">
+								<h5> Connect</h5>
+							</div>
+							<ul>
+								<li><span class="bgcolor"><i class="icon-ring_volume"></i></span>
+									<p>+1 123 456 7892</p>
+								</li>
+								<li><span class="bgcolor"><i class="icon-envelope-o"></i></span>
+									<p><a href="#">support@chimpstudio.com</a>
+									</p>
+								</li>
+								<li><span class="bgcolor"><i class="icon-location-pin2"></i></span>
+									<p>33 - B, 2nd Floor, Saint Jhon Doe Appartments, Sussex, UK.26AL565C.</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright-sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="copyright-inner">
+							<div class="copy-right">
+								<p>© 2020 Foodbakery. All Rights Reserved. Powered By <a href="#">ChimpGroup</a>.
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="copyright-sec">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="copyright-inner">
-								<div class="copy-right">
-									<p>© 2020 Foodbakery. All Rights Reserved. Powered By <a href="#">ChimpGroup</a>.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> <!-- /.cs-copyright -->
-		</footer>
-		<!-- Footer End -->
+		</div> <!-- /.cs-copyright -->
+	</footer>
+	<!-- Footer End -->
 	</div>
 	<!-- Modal Popup Start -->
 	<div class="modal fade menu-order-detail menu-order-info" id="booking-detail-22603" tabindex="-1" role="dialog">

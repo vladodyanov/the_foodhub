@@ -10,7 +10,7 @@ class FoodHubUserCreationForm(auth_forms.UserCreationForm):
 
     class Meta(auth_forms.UserCreationForm.Meta):
         model = FoodHubUser
-        fields = ('first_name', 'last_name', 'username', 'email', 'phone_number', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
 
     def save(self, *args, **kwargs):
         self.user = super().save(*args, **kwargs)

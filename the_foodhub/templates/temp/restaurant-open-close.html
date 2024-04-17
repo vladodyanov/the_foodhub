@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Account Setting</title>
+	<title>My Restaurant</title>
 	<!-- Google Font Family Link Start -->
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800">
@@ -71,7 +71,7 @@
 						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 							<div class="logo">
 								<figure>
-									<a href="home.html" class="light-logo">
+									<a href="../home.html" class="light-logo">
 										<img src="assets/extra-images/main-logo.png" alt="FoodBakery">
 									</a>
 								</figure>
@@ -82,7 +82,7 @@
 										<li>
 											<a href="#">Demos</a>
 											<ul>
-												<li><a href="home.html">Food Bakery</a></li>
+												<li><a href="../home.html">Food Bakery</a></li>
 												<li><a href="mexican-restaurant.html">Mexican Restaurant</a></li>
 												<li><a href="foodstop.html">Food Stop</a></li>
 												<li><a href="rtl.html">Rtl Demo</a></li>
@@ -265,9 +265,9 @@
 											</a>
 											<ul>
 												<li><a href="restaurant-dashboard.html"><i class="icon-dashboard3"></i>Dashboard</a></li>
-												<li><a href="restaurant-restaurant.html"><i class="icon-building"></i>My Restaurant</a></li>
+												<li class="active"><a href="restaurant-restaurant.html"><i class="icon-building"></i>My Restaurant</a></li>
 												<li><a href="restaurant-menu-builder.html"><i class="icon-menu5"></i>Menu Builder</a></li>
-												<li class="active"><a href="restaurant-orders.html"><i class="icon-add_shopping_cart"></i>Orders</a></li>
+												<li><a href="restaurant-orders.html"><i class="icon-add_shopping_cart"></i>Orders</a></li>
 												<li><a href="restaurant-bookings.html"><i class="icon-file-text2 "></i>Bookings</a></li>
 												<li><a href="restaurant-reviews.html"><i class="icon-comment2"></i>Reviews</a></li>
 												<li><a href="restaurant-memberships.html"><i class="icon-card_membership"></i>Memberships</a></li>
@@ -329,9 +329,9 @@
 								<div class="user-nav-list">
 									<ul>
 										<li><a href="restaurant-dashboard.html"><i class="icon-dashboard3"></i>Dashboard</a></li>
-										<li><a href="restaurant-restaurant.html"><i class="icon-building"></i>My Restaurant</a></li>
+										<li class="active"><a href="restaurant-restaurant.html"><i class="icon-building"></i>My Restaurant</a></li>
 										<li><a href="restaurant-menu-builder.html"><i class="icon-menu5"></i>Menu Builder</a></li>
-										<li class="active"><a href="restaurant-orders.html"><i class="icon-add_shopping_cart"></i>Orders</a></li>
+										<li><a href="restaurant-orders.html"><i class="icon-add_shopping_cart"></i>Orders</a></li>
 										<li><a href="restaurant-bookings.html"><i class="icon-file-text2 "></i>Bookings</a></li>
 										<li><a href="restaurant-reviews.html"><i class="icon-comment2"></i>Reviews</a></li>
 										<li><a href="restaurant-memberships.html"><i class="icon-card_membership"></i>Memberships</a></li>
@@ -349,456 +349,314 @@
 						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 							<div class="user-dashboard loader-holder">
 								<div class="user-holder">
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-										<div class="row">
-											<div class="element-title has-border right-filters-row">
-												<h5>ORDERS</h5>
-												<div class="right-filters row pull-right">
-													<div class="col-lg-6 col-md-6 col-xs-6">
-														<div class="input-field">
-															<select class="chosen-select-no-single">
-																<option selected="selected" value="">Select Orders Status</option>
-																<option value="Processing">Processing</option>
-																<option value="Cancelled">Cancelled</option>
-																<option value="Completed">Completed</option>
-															</select>
+									<form>
+										<ul class="restaurant-settings-nav progressbar-nav">
+											<li class="active cond-restaurant-settings">
+												<a href="restaurant-restaurant.html">Restaurant Settings</a>
+											</li>
+											<li class="cond-restaurant-settings active">
+												<a href="restaurant-location.html">Location/Map</a>
+											</li>
+											<li class="cond-restaurant-settings active processing">
+												<a href="restaurant-open-close.html">Restaurant Open/Close</a>
+											</li>
+										</ul>
+
+										<div class="form-fields-set">
+											<ul>
+												<li>
+													<div class="row">
+														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+															<div class="element-title">
+																<h4>Opening Hours</h4>
+															</div>
+														</div>
+														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+															<div class="field-holder">
+																<div class="time-list">
+																	<ul>
+																		<li>
+																			<div class="open-close-time opening-time">
+																				<div class="day-sec">
+																					<span>Monday</span>
+																				</div>
+																				<div class="time-sec">
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<span class="option-label">to</span>
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<a href="#"><i class="icon-close2"></i></a>
+																				</div>
+																				<div class="close-time">
+																					<a href="#">Closed <span>(Click to add opening Hours)</span></a>
+																				</div>
+																			</div>
+																		</li>
+																		<li>
+																			<div class="open-close-time opening-time">
+																				<div class="day-sec">
+																					<span>Tuesday</span>
+																				</div>
+																				<div class="time-sec">
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<span class="option-label">to</span>
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<a href="#"><i class="icon-close2"></i></a>
+																				</div>
+																				<div class="close-time">
+																					<a href="#">Closed <span>(Click to add opening Hours)</span></a>
+																				</div>
+																			</div>
+																		</li>
+																		<li>
+																			<div class="open-close-time opening-time">
+																				<div class="day-sec">
+																					<span>Wednesday</span>
+																				</div>
+																				<div class="time-sec">
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<span class="option-label">to</span>
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<a href="#"><i class="icon-close2"></i></a>
+																				</div>
+																				<div class="close-time">
+																					<a href="#">Closed <span>(Click to add opening Hours)</span></a>
+																				</div>
+																			</div>
+																		</li>
+																		<li>
+																			<div class="open-close-time opening-time">
+																				<div class="day-sec">
+																					<span>Thursday</span>
+																				</div>
+																				<div class="time-sec">
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<span class="option-label">to</span>
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<a href="#"><i class="icon-close2"></i></a>
+																				</div>
+																				<div class="close-time">
+																					<a href="#">Closed <span>(Click to add opening Hours)</span></a>
+																				</div>
+																			</div>
+																		</li>
+																		<li>
+																			<div class="open-close-time opening-time">
+																				<div class="day-sec">
+																					<span>Friday</span>
+																				</div>
+																				<div class="time-sec">
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<span class="option-label">to</span>
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<a href="#"><i class="icon-close2"></i></a>
+																				</div>
+																				<div class="close-time">
+																					<a href="#">Closed <span>(Click to add opening Hours)</span></a>
+																				</div>
+																			</div>
+																		</li>
+																		<li>
+																			<div class="open-close-time opening-time">
+																				<div class="day-sec">
+																					<span>Saturday</span>
+																				</div>
+																				<div class="time-sec">
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<span class="option-label">to</span>
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<a href="#"><i class="icon-close2"></i></a>
+																				</div>
+																				<div class="close-time">
+																					<a href="#">Closed <span>(Click to add opening Hours)</span></a>
+																				</div>
+																			</div>
+																		</li>
+																		<li>
+																			<div class="open-close-time">
+																				<div class="day-sec">
+																					<span>Sunday</span>
+																				</div>
+																				<div class="time-sec">
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<span class="option-label">to</span>
+																					<select class="chosen-select">
+																						<option value="12:15 am">12:15 am</option>
+																						<option value="12:30 am">12:30 am</option>
+																						<option value="01:00 am">01:00 am</option>
+																						<option value="01:15 am">01:15 am</option>
+																						<option value="01:30 am">01:30 am</option>
+																						<option value="02:00 am">02:00 am</option>
+																						<option value="02:15 am">02:15 am</option>
+																						<option value="02:30 am">02:30 am</option>
+																						<option value="03:00 am">03:00 am</option>
+																						<option value="03:15 am">03:15 am</option>
+																					</select>
+																					<a href="#"><i class="icon-close2"></i></a>
+																				</div>
+																				<div class="close-time">
+																					<a href="#">Closed <span>(Click to add opening Hours)</span></a>
+																				</div>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</div>
 														</div>
 													</div>
-													<div class="col-lg-6 col-md-6 col-xs-6">
-														<div class="input-field">
-															<i class="icon-angle-down"></i>
-															<input type="text" data-id="daterange223" id="daterange" value="" placeholder="Select Date Range">
-															<script>
-																$(function () {
-																	$('input[data-id="daterange223"]').daterangepicker({
-																		opens: 'left'
-																	}, function (start, end, label) {
-																		console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-																	});
-																});
-															</script>
-														</div>
+												</li>
+											</ul>
+											<div>
+												<div class="field-holder">
+													<div class="payment-holder input-button-loader">
+														<input class="update-restaurant" type="submit" value="Update Restaurant">
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-									<div class="row">
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-											<div class="user-orders-list">
-												<div class="responsive-table">
-													<ul class="table-generic">
-														<li class="order-heading-titles">
-															<div>Order id</div>
-															<div>Date</div>
-															<div>Total Price</div>
-															<div>Charges</div>
-															<div>Received</div>
-															<div>Status</div>
-															<div>Detail</div>
-														</li>
-														<li class="order-heading-titles">
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606">order-22606</a></div>
-															<div>Apr 9,2020</div>
-															<div>£ 38.99</div>
-															<div>£ 3.90</div>
-															<div>£ 35.09</div>
-															<div><span class="order-status" style="background-color: #047a06;">Completed</span></div>
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606"><i class="icon-plus2 text-color"></i></a></div>
-														</li>
-														<li class="order-heading-titles">
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606">order-22594</a></div>
-															<div>Apr 9,2020</div>
-															<div>£ 37.86</div>
-															<div>£ 3.79</div>
-															<div>£ 34.07</div>
-															<div><span class="order-status" style="background-color: #1e73be;">Processing</span></div>
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606"><i class="icon-plus2 text-color"></i></a></div>
-														</li>
-														<li class="order-heading-titles">
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606">order-22589</a></div>
-															<div>Apr 9,2020</div>
-															<div>£ 26.22</div>
-															<div>£ 2.62</div>
-															<div>£ 23.60</div>
-															<div><span class="order-status" style="background-color: #047a06;">Completed</span></div>
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606"><i class="icon-plus2 text-color"></i></a></div>
-														</li>
-														<li class="order-heading-titles">
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606">order-22586</a></div>
-															<div>Apr 9,2020</div>
-															<div>£ 26.22</div>
-															<div>£ 2.62</div>
-															<div>£ 23.60</div>
-															<div><span class="order-status" style="background-color: #047a06;">Completed</span></div>
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606"><i class="icon-plus2 text-color"></i></a></div>
-														</li>
-														<li class="order-heading-titles">
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606">order-22583</a></div>
-															<div>Apr 9,2020</div>
-															<div>£ 26.22</div>
-															<div>£ 2.62</div>
-															<div>£ 23.60</div>
-															<div><span class="order-status" style="background-color: #1e73be;">Processing</span></div>
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606"><i class="icon-plus2 text-color"></i></a></div>
-														</li>
-														<li class="order-heading-titles">
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606">order-22493</a></div>
-															<div>Apr 2,2020</div>
-															<div>£ 28.24</div>
-															<div>£ 2.82</div>
-															<div>£ 25.42</div>
-															<div><span class="order-status" style="background-color: #047a06;">Completed</span></div>
-															<div><a href="#" data-toggle="modal" data-target="#order-det-22606"><i class="icon-plus2 text-color"></i></a></div>
-														</li>
-													</ul>
-
-												</div>
-												<div class="print-order-detail menu-order-detail order-detail" style="display: none;">
-													<div class="logo"><img src="assets/extra-images/main-logo.png" alt=""></div>
-													<h2>Order Detail</h2>
-													<div class="order-detail-inner">
-														<div class="description-holder">
-															<div class="row">
-																<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-																	<div class="list-detail-options has-checkbox">
-																		<h3>Restaurant Demo </h3>
-																		<ul class="order-detail-options">
-																			<li class="order-number">
-																				<strong>Order ID:</strong>
-																				<span>22606</span>
-																			</li>
-																			<li class="req-delivery">
-																				<strong>Delivery Time:</strong>
-																				<span>10 Minutes </span>
-																			</li>
-																			<li class="created-date">
-																				<strong>Delivery Date:</strong>
-																				<span>Apr 9, 2020 06:38 AM </span>
-																			</li>
-																			<li class="order-type">
-																				<strong>Type:</strong>
-																				<span>order</span>
-																			</li>
-																			<li class="order-type">
-																				<strong>Payment Status:</strong>
-																				<span>Approved</span>
-																			</li>
-																		</ul>
-																	</div>
-																</div>
-																<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-																	<div class="customer-detail-holder">
-																		<h3>Customer Detail</h3>
-																		<ul class="customer-detail">
-																			<li>
-																				<strong>Name :</strong>
-																				<span>Buyer Demo</span>
-																			</li>
-																			<li>
-																				<strong>Phone Number :</strong>
-																				<span>0123456789</span>
-																			</li>
-																			<li>
-																				<strong>Email :</strong>
-																				<span>dum4@chimpgroup.com</span>
-																			</li>
-																			<li>
-																				<strong>Address :</strong>
-																				<span>London</span>
-																			</li>
-																		</ul>
-																	</div>
-																</div>
-																<div class="row">
-																	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																		<div class="order-status-holder">
-																			<h3> Order Status:</h3>
-																			<div class="order-status-process order-status">
-																				<p>Completed</p>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<h2 class="heading">Food Menu</h2>
-																	<div class="responsive-table">
-																		<ul class="categories-order table-generic">
-																			<li class="order-heading-titles">
-																				<div>Products</div>
-																				<div>Price per</div>
-																			</li>
-																			<li class="order-heading-titles">
-																				<div>
-																					<h4>Pizzas</h4>
-																					<h5>Foodbakery Special 9" Deep Pan</h5>
-																				</div>
-																				<div><span class="category-price">£4.80</span></div>
-																			</li>
-																			<li class="order-heading-titles">
-																				<div>
-																					<h4>Pizzas</h4>
-																					<h5>Foodbakery Special 9" Deep Pan</h5>
-																				</div>
-																				<div><span class="category-price">£4.80</span></div>
-																			</li>
-																			<li class="order-heading-titles">
-																				<div>
-																					<h4>Pizzas</h4>
-																					<h5>Foodbakery Special 12" Deep Pan</h5>
-																				</div>
-																				<div><span class="category-price">£3.90</span></div>
-																			</li>
-																			<li class="order-heading-titles">
-																				<div>
-																					<h4>Garlic Bread</h4>
-																					<h5>Garlic Bread 12" Deep</h5>
-																				</div>
-																				<div><span class="category-price">£3.50</span></div>
-																			</li>
-																			<li class="order-heading-titles">
-																				<div>
-																					<h4>Kebabs</h4>
-																					<h5>Kebabs With Naan</h5>
-																				</div>
-																				<div><span class="category-price">£4.50</span></div>
-																			</li>
-																			<li class="order-heading-titles">
-																				<div>
-																					<h4>Burgers</h4>
-																					<h5>Quarter Pounder</h5>
-																				</div>
-																				<div><span class="category-price">£3.00</span></div>
-																			</li>
-																		</ul>
-																	</div>
-																</div>
-																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<div class="row">
-																		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-																			<h3>Order Total</h3>
-																		</div>
-																		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-																			<ul class="order-detail-options order-total">
-																				<li class="created-date">
-																					<strong>Subtotal:</strong>
-																					<span>£24.50</span>
-																				</li>
-																				<li class="order-type">
-																					<strong>
-																						Pick Up Fee: </strong>
-																					<span>£10.00</span>
-																				</li>
-																				<li class="order-type">
-																					<strong>VAT (13%)</strong>
-																					<span>£4.48</span>
-																				</li>
-																				<li class="order-type total-price">
-																					<strong>Total:</strong>
-																					<span>£38.99</span>
-																				</li>
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="modal fade menu-order-detail order-detail" id="order-det-22606" tabindex="-1" role="dialog" style="display: none;">
-													<div class="modal-dialog">
-														<div class="modal-content">
-															<div class="modal-header">
-																<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-																<h2>Order Detail</h2>
-																<button class="btn-print"><i class="icon-printer"></i><span>Receipt</span></button>
-															</div>
-															<div class="modal-body">
-																<div class="order-detail-inner">
-																	<div class="description-holder">
-																		<div class="row">
-																			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-																				<div class="list-detail-options has-checkbox">
-																					<h3>
-																						Restaurant Demo </h3>
-																					<ul class="order-detail-options">
-																						<li class="order-number">
-																							<strong>Order ID:</strong>
-																							<span>22606</span>
-																						</li>
-																						<li class="req-delivery">
-																							<strong>Delivery Time:</strong>
-																							<span>10 Minutes </span>
-																						</li>
-																						<li class="created-date">
-																							<strong>Delivery Date:</strong>
-																							<span>
-																								Apr 9, 2020 06:38 AM </span>
-																						</li>
-																						<li class="order-type">
-																							<strong>Type:</strong>
-																							<span>order</span>
-																						</li>
-																						<li class="order-type">
-																							<strong>Payment Status:</strong>
-																							<span>Approved</span>
-																						</li>
-
-																					</ul>
-																				</div>
-
-																			</div>
-																			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-																				<div class="customer-detail-holder">
-																					<h3>Customer Detail</h3>
-																					<ul class="customer-detail">
-																						<li>
-																							<strong>Name :</strong>
-																							<span>Buyer Demo</span>
-																						</li>
-																						<li>
-																							<strong>Phone Number :</strong>
-																							<span>0123456789</span>
-																						</li>
-																						<li>
-																							<strong>Email :</strong>
-																							<span>dum4@chimpgroup.com</span>
-																						</li>
-																						<li>
-																							<strong>Address :</strong>
-																							<span>London</span>
-																						</li>
-																					</ul>
-																				</div>
-																			</div>
-																			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																				<div class="order-status-holder">
-																					<div class="row">
-																						<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-																							<h3>Order Status </h3>
-																						</div>
-																						<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
-																							<div class="input-field">
-																								<select class="chosen-select-no-single">
-																									<option value="Processing">Processing</option>
-																									<option value="Cancelled">Cancelled</option>
-																									<option selected="selected" value="Completed">Completed</option>
-																								</select>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																				<h2 class="heading">Food Menu</h2>
-																				<div class="responsive-table">
-																					<ul class="categories-order table-generic">
-																						<li class="order-heading-titles">
-																							<div>Products</div>
-																							<div>Price per</div>
-																						</li>
-																						<li class="order-heading-titles">
-																							<div>
-																								<h4>Pizzas</h4>
-																								<h5>Foodbakery Special 9" Deep Pan</h5>
-																							</div>
-																							<div><span class="category-price">£4.80</span></div>
-																						</li>
-																						<li class="order-heading-titles">
-																							<div>
-																								<h4>Pizzas</h4>
-																								<h5>Foodbakery Special 9" Deep Pan</h5>
-																							</div>
-																							<div><span class="category-price">£4.80</span></div>
-																						</li>
-																						<li class="order-heading-titles">
-																							<div>
-																								<h4>Pizzas</h4>
-																								<h5>Foodbakery Special 12" Deep Pan</h5>
-																							</div>
-																							<div><span class="category-price">£3.90</span></div>
-																						</li>
-																						<li class="order-heading-titles">
-																							<div>
-																								<h4>Garlic Bread</h4>
-																								<h5>Garlic Bread 12" Deep</h5>
-																							</div>
-																							<div><span class="category-price">£3.50</span></div>
-																						</li>
-																						<li class="order-heading-titles">
-																							<div>
-																								<h4>Kebabs</h4>
-																								<h5>Kebabs With Naan</h5>
-																							</div>
-																							<div><span class="category-price">£4.50</span></div>
-																						</li>
-																						<li class="order-heading-titles">
-																							<div>
-																								<h4>Burgers</h4>
-																								<h5>Quarter Pounder</h5>
-																							</div>
-																							<div><span class="category-price">£3.00</span></div>
-																						</li>
-																					</ul>
-																				</div>
-																			</div>
-																			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																				<div class="row">
-																					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-																						<h3>Order Total</h3>
-																					</div>
-																					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-																						<ul class="order-detail-options order-total">
-																							<li class="created-date">
-																								<strong>Subtotal:</strong>
-																								<span>£24.50</span>
-																							</li>
-																							<li class="order-type">
-																								<strong>
-																									Pick Up Fee: </strong>
-																								<span>£10.00</span>
-																							</li>
-																							<li class="order-type">
-																								<strong>VAT (13%)</strong>
-																								<span>£4.48</span>
-																							</li>
-																							<li class="order-type total-price">
-																								<strong>Total:</strong>
-																								<span>£38.99</span>
-																							</li>
-																						</ul>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<script>
-													(function ($) {
-														$(document).ready(function () {
-															$(".order-detail .modal-dialog .modal-content").mCustomScrollbar({
-																setHeight: 724,
-																theme: "minimal-dark",
-																mouseWheelPixels: 100
-															});
-														});
-													})(jQuery);
-												</script>
-											</div>
-										</div>
-									</div>
-									<ul class="pagination">
-										<li class="active"><a>1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><span class="page-numbers dots">…</span></li>
-										<li><a href="#">5</a></li>
-										<li><a href="#">Next </a></li>
-									</ul>
+									</form>
 								</div>
 							</div>
 						</div>
