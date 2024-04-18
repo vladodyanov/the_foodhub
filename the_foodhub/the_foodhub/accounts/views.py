@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import views as auth_views, logout, login
 from django.urls import reverse_lazy, reverse
@@ -11,13 +12,14 @@ class SignUpUserView(views.CreateView):
     template_name = 'accounts/signup_user.html'
     form_class = FoodHubUserCreationForm
     queryset = Profile.objects.all()
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('signup_user')
 
     def form_valid(self, form):
         user = form.save(commit=False)
         user.role = FoodHubUser.CUSTOMER
         user.save()
         login(self.request, user)
+        messages.success(self.request, 'Your account has been created successfully!')
         return super().form_valid(form)
 
 

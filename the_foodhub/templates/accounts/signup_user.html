@@ -65,6 +65,16 @@
                                             </div>
                                         </li>
                                         <li>
+                                            <ul class="errorlist">
+                                                {% for field in form %}
+                                                    {% if field.errors %}
+                                                        {% for error in field.errors %}
+                                                            <li style="color: red">{{ error }}</li>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            <li style="color: red">{{ form.non_filed_errors }}</li>
+                                            </ul>
                                             <div class="row">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="field-holder">
@@ -73,6 +83,11 @@
                                                             {% csrf_token %}
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                             <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                  {% include 'partials/alerts.html' %}
                                                 </div>
                                             </div>
                                         </li>
