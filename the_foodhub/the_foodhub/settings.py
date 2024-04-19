@@ -24,6 +24,7 @@ INSTALLED_APPS = [
 
     'the_foodhub.web',
     'the_foodhub.accounts',
+    'the_foodhub.vendor',
 ]
 
 MIDDLEWARE = [
