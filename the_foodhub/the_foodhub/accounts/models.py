@@ -10,11 +10,11 @@ class FoodHubUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
     MAX_LAST_NAME_LENGTH = 50
     MAX_USERNAME_LENGTH = 50
     MAX_PHONE_NUMBER_LENGTH = 15
-    RESTAURANT = 1
+    VENDOR = 1
     CUSTOMER = 2
 
     ROLE_CHOICE = (
-        (RESTAURANT, 'Restaurant'),
+        (VENDOR, 'Restaurant'),
         (CUSTOMER, 'Customer'),
     )
 
