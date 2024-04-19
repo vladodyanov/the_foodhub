@@ -1,32 +1,48 @@
+
+from django.contrib.auth import  logout
+from django.shortcuts import redirect, render
+
 from django.contrib import messages
-from django.shortcuts import render, redirect
-from django.contrib.auth import views as auth_views, logout, login
-from django.urls import reverse_lazy, reverse
-from django.views import generic as views
 
 from the_foodhub.accounts.forms import FoodHubUserCreationForm
-from the_foodhub.accounts.models import Profile, FoodHubUser
+from the_foodhub.accounts.models import FoodHubUser
 
 
-class SignUpUserView(views.CreateView):
-    template_name = 'accounts/signup_user.html'
-    form_class = FoodHubUserCreationForm
-    queryset = Profile.objects.all()
-    success_url = reverse_lazy('signup_user')
+def signup_user(request):
+    if request.user.is_authenticated:
+        messages.warning(request, 'You are already logged in!')
+        return redirect('home')
+    elif request.method == 'POST':
+        form = FoodHubUserCreationForm(request.POST)
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            user = FoodHubUser.objects.create_user(first_name=first_name, last_name=last_name, username=username,
+                                                   email=email, password=password)
+            user.role = FoodHubUser.CUSTOMER
+            user.save()
 
-    def form_valid(self, form):
-        user = form.save(commit=False)
-        user.role = FoodHubUser.CUSTOMER
-        user.save()
-        login(self.request, user)
-        messages.success(self.request, 'Your account has been created successfully!')
-        return super().form_valid(form)
+            # # Send verification email
+            # mail_subject = 'Please activate your account'
+            # email_template = 'accounts/emails/account_verification_email.html'
+            # send_verification_email(request, user, mail_subject, email_template)
+            messages.success(request, 'Your account has been registered successfully!')
+            return redirect('signup_user')
+        else:
+            print('invalid form')
+            print(form.errors)
+    else:
+        form = FoodHubUserCreationForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/signup_user.html', context)
 
 
-class SignInUserView(auth_views.LoginView):
-    # template_name = 'accounts/signin_user.html'
-    # redirect_authenticated_user = True
-    # success_url = reverse_lazy('index')
+def signin_user(request):
     pass
 
 
