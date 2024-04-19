@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from the_foodhub.accounts.forms import FoodHubUserCreationForm
-from the_foodhub.accounts.models import FoodHubUser
+from the_foodhub.accounts.models import FoodHubUser, Profile
 from the_foodhub.vendor.forms import FoodHubVendorCreationForm
 from django.contrib import messages
 
@@ -26,7 +26,7 @@ def signup_vendor(request):
             user.save()
             vendor = vendor_form.save(commit=False)
             vendor.user = user
-            user_profile = FoodHubUser.objects.get(user=user)
+            user_profile = Profile.objects.get(user=user)
             vendor.user_profile = user_profile
             vendor.save()
             messages.success(request, 'Your account as vendor has been registered successfully! '
