@@ -60,8 +60,9 @@ def signin_user(request):
 
 
 def signout_user(request):
-    logout(request)
-    return redirect('home')
+    auth.logout(request)
+    messages.info(request, 'You are logged out')
+    return redirect('signin_user')
 
 
 def dashboard(request):
