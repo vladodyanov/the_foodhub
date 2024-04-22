@@ -14,7 +14,7 @@ class Vendor(models.Model):
 
     user_profile = models.OneToOneField(
         Profile,
-        related_name='user_profile',
+        related_name='userprofile',
         on_delete=models.CASCADE,
     )
 

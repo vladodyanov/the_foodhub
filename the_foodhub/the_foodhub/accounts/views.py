@@ -48,4 +48,4 @@ def signin_user(request):
 
 def signout_user(request):
     logout(request)
-    return redirect('index')
+    return redirect('home')

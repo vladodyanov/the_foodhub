@@ -1,9 +1,3 @@
-from django.contrib.auth import get_user_model
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-
-from the_foodhub.accounts.models import Profile
-
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 from .models import FoodHubUser, Profile
