@@ -32,7 +32,8 @@ TBA
 TBA
 
 ## Screenshots
-TBA
+<img align="center" width=480px  alt="home page view" src="https://github.com/vladodyanov/the_foodhub/blob/main/the_foodhub/screenshots/Screenshot%2001.jpg" />
+
 
 ## Setup
 TBA
