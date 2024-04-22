@@ -1,5 +1,4 @@
-
-from django.contrib.auth import  logout
+from django.contrib.auth import logout
 from django.shortcuts import redirect, render
 
 from django.contrib import messages
@@ -43,9 +42,14 @@ def signup_user(request):
 
 
 def signin_user(request):
-    pass
+    context={}
+    return render(request, 'accounts/signin_user.html', context)
 
 
 def signout_user(request):
     logout(request)
     return redirect('home')
+
+
+def dashboard(request):
+    pass
