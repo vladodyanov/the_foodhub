@@ -42,7 +42,10 @@ def signup_user(request):
 
 
 def signin_user(request):
-    if request.method == 'POST':
+    if request.user.is_authenticated:
+        messages.warning(request, 'You are already logged in!')
+        return redirect('dashboard')
+    elif request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
 

@@ -60,21 +60,31 @@ class FoodHubUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
     created_date = models.DateTimeField("date created", default=timezone.now)
     modified_date = models.DateTimeField('date modified', default=timezone.now)
 
-    is_staff = models.BooleanField(
-        default=False,
-    )
+    is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
+    is_superadmin = models.BooleanField(default=False)
 
-    is_active = models.BooleanField(
-        default=True,
-    )
-
-    USERNAME_FIELD = "email"
+    USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 
     objects = FoodHubUserManager()
 
     def __str__(self):
         return self.email
+
+    def has_perm(self, perm, obj=None):
+        return self.is_admin
+
+    def has_module_perms(self, app_label):
+        return True
+
+    def get_role(self):
+        if self.role == 1:
+            user_role = 'Vendor'
+        elif self.role == 2:
+            user_role = 'Customer'
+        return user_role
 
 
 class Profile(models.Model):

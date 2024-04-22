@@ -30,7 +30,8 @@
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 							<div class="login-option">
                                 {% if user.is_authenticated %}
-                                    <a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'signout_user' %}">Logout</a>
+                                    <a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'dashboard' %}">My Account</a>
+                                    <a class="cs-color cs-popup-joinus-btn login-popup text-danger" href="{% url 'signout_user' %}">Logout</a>
                                 {% else %}
                                     <a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'signin_user' %}">Login</a> /
                                     <a class="cs-color cs-popup-joinus-btn login-popup ml-0" href="{% url 'signup_user' %}">Register</a><a class="get-start-btn" href="{% url 'signup_vendor' %}">
