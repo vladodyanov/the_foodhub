@@ -1,7 +1,9 @@
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.tokens import default_token_generator
 from django.shortcuts import redirect, render
 from django.contrib import messages, auth
+from django.utils.http import urlsafe_base64_decode
 
 from the_foodhub.accounts.forms import FoodHubUserCreationForm
 from the_foodhub.accounts.models import FoodHubUser
@@ -9,7 +11,21 @@ from the_foodhub.accounts.utils import detect_user, check_role_vendor, check_rol
 
 
 def activate(request, uidb64, token):
-    return
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = FoodHubUser._default_manager.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, FoodHubUser.DoesNotExist):
+        user = None
+
+    if user is not None and default_token_generator.check_token(user, token):
+        user.is_active = True
+        user.save()
+        messages.success(request, 'Congratulations! Your account is activated')
+        return redirect('my_account')
+    else:
+        messages.error(request, 'Invalid activation link')
+        return redirect('my_account')
+
 
 
 def signup_user(request):
