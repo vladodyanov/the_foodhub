@@ -1,5 +1,6 @@
 from django.urls import path
-from the_foodhub.accounts.views import signup_user, signin_user, signout_user, customer_dashboard, my_account, vendor_dashboard
+from the_foodhub.accounts.views import (signup_user, signin_user, signout_user, customer_dashboard, my_account,
+                                        vendor_dashboard)
 
 urlpatterns = (
     path("signup_user/", signup_user, name="signup_user"),

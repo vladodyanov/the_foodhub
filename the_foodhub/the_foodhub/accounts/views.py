@@ -8,6 +8,10 @@ from the_foodhub.accounts.models import FoodHubUser
 from the_foodhub.accounts.utils import detect_user, check_role_vendor, check_role_customer
 
 
+# def activate(request, uidb64, token):
+#     return
+
+
 def signup_user(request):
     if request.user.is_authenticated:
         messages.warning(request, 'You are already logged in!')
