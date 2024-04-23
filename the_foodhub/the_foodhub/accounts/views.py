@@ -1,10 +1,10 @@
 from django.contrib.auth import logout
 from django.shortcuts import redirect, render
-
 from django.contrib import messages, auth
 
 from the_foodhub.accounts.forms import FoodHubUserCreationForm
 from the_foodhub.accounts.models import FoodHubUser
+from the_foodhub.accounts.utils import detect_user
 
 
 def signup_user(request):
@@ -58,7 +58,7 @@ def signin_user(request):
         else:
             messages.error(request, 'Invalid login credentials')
             return redirect('signin_user')
-    context={}
+    context = {}
     return render(request, 'accounts/signin_user.html', context)
 
 
@@ -68,5 +68,15 @@ def signout_user(request):
     return redirect('signin_user')
 
 
-def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+def my_account(request):
+    user = request.user
+    redirect_url = detect_user(user)
+    return redirect(redirect_url)
+
+
+def customer_dashboard(request):
+    return render(request, 'accounts/customer_dashboard.html')
+
+
+def vendor_dashboard(request):
+    return render(request, 'accounts/vendor_dashboard.html')
