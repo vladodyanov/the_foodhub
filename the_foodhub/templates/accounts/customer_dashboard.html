@@ -3,7 +3,8 @@
 {% block main_content %}
     
     <h4>Wellcome, {{ user.username }}</h4>
-    
+    <h3>{{ user.get_role }}</h3>
+
     {% include 'partials/alerts.html' %}
 
 {% endblock %}

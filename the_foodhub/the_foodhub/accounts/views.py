@@ -1,10 +1,11 @@
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import redirect, render
 from django.contrib import messages, auth
 
 from the_foodhub.accounts.forms import FoodHubUserCreationForm
 from the_foodhub.accounts.models import FoodHubUser
-from the_foodhub.accounts.utils import detect_user
+from the_foodhub.accounts.utils import detect_user, check_role_vendor, check_role_customer
 
 
 def signup_user(request):
@@ -44,7 +45,7 @@ def signup_user(request):
 def signin_user(request):
     if request.user.is_authenticated:
         messages.warning(request, 'You are already logged in!')
-        return redirect('dashboard')
+        return redirect('my_account')
     elif request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
@@ -54,7 +55,7 @@ def signin_user(request):
         if user is not None:
             auth.login(request, user)
             messages.success(request, 'You are now logged in')
-            return redirect('dashboard')
+            return redirect('my_account')
         else:
             messages.error(request, 'Invalid login credentials')
             return redirect('signin_user')
@@ -68,15 +69,20 @@ def signout_user(request):
     return redirect('signin_user')
 
 
+@login_required(login_url='signin_user')
 def my_account(request):
     user = request.user
     redirect_url = detect_user(user)
     return redirect(redirect_url)
 
 
+@login_required(login_url='signin_user')
+@user_passes_test(check_role_customer)
 def customer_dashboard(request):
     return render(request, 'accounts/customer_dashboard.html')
 
 
+@login_required(login_url='signin_user')
+@user_passes_test(check_role_vendor)
 def vendor_dashboard(request):
     return render(request, 'accounts/vendor_dashboard.html')

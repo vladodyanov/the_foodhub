@@ -10,7 +10,7 @@ from django.contrib import messages
 def signup_vendor(request):
     if request.user.is_authenticated:
         messages.warning(request, 'You are already logged in!')
-        return redirect('dashboard')
+        return redirect('my_account')
     elif request.method == 'POST':
         form = FoodHubUserCreationForm(request.POST)
         v_form = FoodHubVendorCreationForm(request.POST, request.FILES)
