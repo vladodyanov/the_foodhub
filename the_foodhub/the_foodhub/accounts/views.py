@@ -5,11 +5,11 @@ from django.contrib import messages, auth
 
 from the_foodhub.accounts.forms import FoodHubUserCreationForm
 from the_foodhub.accounts.models import FoodHubUser
-from the_foodhub.accounts.utils import detect_user, check_role_vendor, check_role_customer
+from the_foodhub.accounts.utils import detect_user, check_role_vendor, check_role_customer, send_verification_email
 
 
-# def activate(request, uidb64, token):
-#     return
+def activate(request, uidb64, token):
+    return
 
 
 def signup_user(request):
@@ -29,10 +29,10 @@ def signup_user(request):
             user.role = FoodHubUser.CUSTOMER
             user.save()
 
-            # # Send verification email
-            # mail_subject = 'Please activate your account'
-            # email_template = 'accounts/emails/account_verification_email.html'
-            # send_verification_email(request, user, mail_subject, email_template)
+            # Send verification email
+            mail_subject = 'Please activate your account'
+            email_template = 'accounts/emails/account_verification_email.html'
+            send_verification_email(request, user, mail_subject, email_template)
             messages.success(request, 'Your account has been registered successfully!')
             return redirect('signup_user')
         else:
