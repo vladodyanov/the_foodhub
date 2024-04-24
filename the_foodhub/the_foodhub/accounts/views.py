@@ -47,10 +47,38 @@ def forgot_password(request):
 
 
 def reset_password_validate(request, uidb64, token):
-    return
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = FoodHubUser._default_manager.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, FoodHubUser.DoesNotExist):
+        user = None
+
+    if user is not None and default_token_generator.check_token(user, token):
+        request.session['uid'] = uid
+        messages.info(request, 'Please reset your password')
+        return redirect('reset_password')
+    else:
+        messages.error(request, 'This link has been expired')
+        return redirect('my_account')
 
 
 def reset_password(request):
+    if request.method == 'POST':
+        password = request.POST['password']
+        confirm_password = request.POST['confirm_password']
+
+        if password == confirm_password:
+            pk = request.session.get('uid')
+            user = FoodHubUser.objects.get(pk=pk)
+            user.set_password(password)
+            user.is_active = True
+            user.save()
+            messages.success(request, 'Password reset successful')
+            return redirect('signin_user')
+        else:
+            messages.error(request, 'Passwords do not match')
+            return redirect('reset_password')
+
     render(request, 'accounts/reset_password.html')
 
 
