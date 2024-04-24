@@ -27,6 +27,17 @@ def activate(request, uidb64, token):
         return redirect('my_account')
 
 
+def forgot_password(request):
+    return render(request, 'accounts/forgot_password.html')
+
+
+def reset_password_validate(request, uidb64, token):
+    return
+
+
+def reset_password(request):
+    render(request, 'accounts/reset_password.html')
+
 
 def signup_user(request):
     if request.user.is_authenticated:
