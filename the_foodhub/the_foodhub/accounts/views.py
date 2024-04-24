@@ -7,7 +7,8 @@ from django.utils.http import urlsafe_base64_decode
 
 from the_foodhub.accounts.forms import FoodHubUserCreationForm
 from the_foodhub.accounts.models import FoodHubUser
-from the_foodhub.accounts.utils import detect_user, check_role_vendor, check_role_customer, send_verification_email
+from the_foodhub.accounts.utils import (detect_user, check_role_vendor, check_role_customer, send_verification_email,
+                                        send_password_reset_email)
 
 
 def activate(request, uidb64, token):
@@ -28,6 +29,18 @@ def activate(request, uidb64, token):
 
 
 def forgot_password(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+
+        if FoodHubUser.objects.filter(email=email).exists():
+            user = FoodHubUser.objects.get(email__exact=email)
+            send_password_reset_email(request, user)
+            messages.success(request, 'Password reset link was send to your email address.')
+            return redirect('signin_user')
+        else:
+            messages.error(request, 'This account does not exist')
+            return redirect('forgot_password')
+
     return render(request, 'accounts/forgot_password.html')
 
 
