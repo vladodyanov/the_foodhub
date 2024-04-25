@@ -58,7 +58,7 @@ def reset_password_validate(request, uidb64, token):
         messages.info(request, 'Please reset your password')
         return redirect('reset_password')
     else:
-        messages.error(request, 'This link has been expired')
+        messages.error(request, 'This link has been expired!')
         return redirect('my_account')
 
 
@@ -79,7 +79,7 @@ def reset_password(request):
             messages.error(request, 'Passwords do not match')
             return redirect('reset_password')
 
-    render(request, 'accounts/reset_password.html')
+    return render(request, 'accounts/reset_password.html')
 
 
 def signup_user(request):
