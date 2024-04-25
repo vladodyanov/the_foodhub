@@ -1,7 +1,7 @@
 from django.db import models
 
 from the_foodhub.accounts.models import FoodHubUser, Profile
-
+from the_foodhub.accounts.utils import send_notification
 
 class Vendor(models.Model):
     MAX_VENDOR_NAME_LENGTH = 50
@@ -40,3 +40,22 @@ class Vendor(models.Model):
 
     def __str__(self):
         return self.vendor_name
+
+    def save(self, *args, **kwargs):
+        if self.pk is not None:
+            orig = Vendor.objects.get(pk=self.pk)
+            if orig.is_approved != self.is_approved:
+                mail_template = 'accounts/emails/vendor_approved_email.html'
+                context = {
+                    'user': self.user,
+                    'is_approved': self.is_approved,
+                }
+                if self.is_approved:
+                    mail_subject = 'Congratulations! Your restaurant has been approved'
+                    send_notification(mail_subject, mail_template, context)
+                else:
+                    mail_subject = 'Your restaurant has not been approved on our marketplace'
+
+                    send_notification(mail_subject, mail_template, context)
+
+        return super(Vendor, self).save(*args, **kwargs)

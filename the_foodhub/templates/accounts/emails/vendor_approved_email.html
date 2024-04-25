@@ -1,0 +1,10 @@
+{% autoescape off %}
+
+Dear {{ user.first_name }},
+{% if is_approved %}
+Congratulations! Your restaurant has been approved by our administration team. --FOODHUB
+{% else %}
+Your restaurant has not been approved by our administration team. Please contact us for more details. --FOODHUB 
+{% endif %}
+
+{% endautoescape %}
