@@ -1,9 +1,10 @@
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import render, redirect
 from django.utils.text import slugify
 
 from the_foodhub.accounts.forms import FoodHubUserCreationForm
 from the_foodhub.accounts.models import FoodHubUser, Profile
-from the_foodhub.accounts.utils import send_verification_email
+from the_foodhub.accounts.utils import send_verification_email, check_role_vendor
 from the_foodhub.vendor.forms import FoodHubVendorCreationForm
 from django.contrib import messages
 
@@ -21,13 +22,14 @@ def signup_vendor(request):
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            user = FoodHubUser.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password)
+            user = FoodHubUser.objects.create_user(first_name=first_name, last_name=last_name, username=username,
+                                                   email=email, password=password)
             user.role = FoodHubUser.VENDOR
             user.save()
             vendor = v_form.save(commit=False)
             vendor.user = user
             vendor_name = v_form.cleaned_data['vendor_name']
-            vendor.vendor_slug = slugify(vendor_name)+'-'+str(user.id)
+            vendor.vendor_slug = slugify(vendor_name) + '-' + str(user.id)
             user_profile = Profile.objects.get(user=user)
             vendor.user_profile = user_profile
             vendor.save()
@@ -52,6 +54,12 @@ def signup_vendor(request):
     }
 
     return render(request, 'vendor/signup_vendor.html', context)
+
+
+@login_required(login_url='signin_user')
+@user_passes_test(check_role_vendor)
+def vendor_dashboard(request):
+    return render(request, 'vendor/vendor_dashboard.html')
 
 
 def vendor_profile(request):

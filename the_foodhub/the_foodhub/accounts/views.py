@@ -7,7 +7,7 @@ from django.utils.http import urlsafe_base64_decode
 
 from the_foodhub.accounts.forms import FoodHubUserCreationForm
 from the_foodhub.accounts.models import FoodHubUser
-from the_foodhub.accounts.utils import (detect_user, check_role_vendor, check_role_customer, send_verification_email)
+from the_foodhub.accounts.utils import (detect_user, check_role_customer, send_verification_email)
 
 
 def activate(request, uidb64, token):
@@ -156,7 +156,4 @@ def customer_dashboard(request):
     return render(request, 'accounts/customer_dashboard.html')
 
 
-@login_required(login_url='signin_user')
-@user_passes_test(check_role_vendor)
-def vendor_dashboard(request):
-    return render(request, 'vendor/vendor_dashboard.html')
+
