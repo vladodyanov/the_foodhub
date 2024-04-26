@@ -3,6 +3,7 @@ from django.db import models
 from the_foodhub.accounts.models import FoodHubUser, Profile
 from the_foodhub.accounts.utils import send_notification
 
+
 class Vendor(models.Model):
     MAX_VENDOR_NAME_LENGTH = 50
 

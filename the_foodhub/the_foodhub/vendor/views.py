@@ -8,6 +8,8 @@ from the_foodhub.accounts.utils import send_verification_email, check_role_vendo
 from the_foodhub.vendor.forms import FoodHubVendorCreationForm
 from django.contrib import messages
 
+from the_foodhub.vendor.models import Vendor
+
 
 def signup_vendor(request):
     if request.user.is_authenticated:
@@ -59,7 +61,11 @@ def signup_vendor(request):
 @login_required(login_url='signin_user')
 @user_passes_test(check_role_vendor)
 def vendor_dashboard(request):
-    return render(request, 'vendor/vendor_dashboard.html')
+    vendor = Vendor.objects.get(user=request.user)
+    context = {
+        'vendor': vendor,
+    }
+    return render(request, 'vendor/vendor_dashboard.html', context)
 
 
 def vendor_profile(request):
