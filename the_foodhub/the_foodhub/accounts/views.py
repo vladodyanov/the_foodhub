@@ -159,4 +159,4 @@ def customer_dashboard(request):
 @login_required(login_url='signin_user')
 @user_passes_test(check_role_vendor)
 def vendor_dashboard(request):
-    return render(request, 'accounts/vendor_dashboard.html')
+    return render(request, 'vendor/vendor_dashboard.html')

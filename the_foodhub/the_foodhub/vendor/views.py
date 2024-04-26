@@ -52,3 +52,7 @@ def signup_vendor(request):
     }
 
     return render(request, 'vendor/signup_vendor.html', context)
+
+
+def vendor_profile(request):
+    return render(request, 'vendor/vendor_profile.html')
