@@ -38,6 +38,10 @@ TBA
 
 <img align="center" width=480px  alt="home page view" src="https://github.com/vladodyanov/the_foodhub/blob/main/the_foodhub/screenshots/Screenshot%2003.jpg" />
 
+<img align="center" width=480px  alt="home page view" src="https://github.com/vladodyanov/the_foodhub/blob/main/the_foodhub/screenshots/Screenshot%2004.jpg" />
+
+<img align="center" width=480px  alt="home page view" src="https://github.com/vladodyanov/the_foodhub/blob/main/the_foodhub/screenshots/Screenshot%2005.jpg" />
+
 ## Setup
 TBA
 
