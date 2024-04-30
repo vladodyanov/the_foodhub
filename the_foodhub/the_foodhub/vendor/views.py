@@ -61,11 +61,7 @@ def signup_vendor(request):
 @login_required(login_url='signin_user')
 @user_passes_test(check_role_vendor)
 def vendor_dashboard(request):
-    vendor = Vendor.objects.get(user=request.user)
-    context = {
-        'vendor': vendor,
-    }
-    return render(request, 'vendor/vendor_dashboard.html', context)
+    return render(request, 'vendor/vendor_dashboard.html')
 
 
 def vendor_profile(request):
