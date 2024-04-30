@@ -7,7 +7,7 @@
 {% include 'partials/alerts.html' %}        
     
 <div class="main-section">
-			<div class="page-section restaurant-detail-image-section" style=" background: url({% static 'extra-images/banner-img.jpg' %}) no-repeat scroll 0 0 / cover;">
+			<div class="page-section restaurant-detail-image-section" style=" background: url({{ vendor.user_profile.cover_photo.url }}) no-repeat scroll 0 0 / cover;">
 				{% include 'partials/cover.html' %}
 			</div>
 			<div class="page-section account-header buyer-logged-in">
