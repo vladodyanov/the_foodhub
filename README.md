@@ -25,7 +25,9 @@ TBA
 - Java Script
 
 ## User Management
-TBA
+- User/Vendor Registration: New users and staff can create accounts with unique emails and passwords.
+- User/Vendor Login: Registered users and staff can log in securely to access their profiles.
+
 
 
 ## Features
