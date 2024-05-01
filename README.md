@@ -25,7 +25,7 @@ TBA
 - Java Script
 
 ## User Management
-- User/Vendor Registration: New users and vendors can create accounts with unique emails and passwords.
+- User/Vendor Registration: New users and vendors can create accounts with unique emails and passwords. After successfully registering, users/vendors need to confirm their account creation via email before logging in.
 - User/Vendor Login: Registered users and vendors can log in securely to access their profiles. 
 - If User/Vendor forgotten their password, they can easily recover it by following the 'Forgot Password' instructions.
 
