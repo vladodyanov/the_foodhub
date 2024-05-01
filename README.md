@@ -25,9 +25,9 @@ TBA
 - Java Script
 
 ## User Management
-- User/Vendor Registration: New users and staff can create accounts with unique emails and passwords.
-- User/Vendor Login: Registered users and staff can log in securely to access their profiles.
-
+- User/Vendor Registration: New users and vendors can create accounts with unique emails and passwords.
+- User/Vendor Login: Registered users and vendors can log in securely to access their profiles. 
+- If User/Vendor forgotten their password, they can easily recover it by following the 'Forgot Password' instructions.
 
 
 ## Features
