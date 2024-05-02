@@ -25,7 +25,10 @@ TBA
 - Java Script
 
 ## User Management
-TBA
+- User Registration: New users can create accounts with unique emails and passwords. After successfull registration, users need to confirm their account creation via email before logging in.
+- Vendor Registration: New vendors can create accounts with unique emails and passwords. Along with registration, they are required to provide valid license information. All provided information is reviewed by the site admin team. If the vendor is approved, they can proceed to the sign-in page. After the account review, vendors receive an email confirming their account or indicating denial.
+- User/Vendor Login: Registered users and vendors can log in securely to access their profiles. 
+- If User/Vendor forgotten their password, they can easily recover it by following the 'Forgot Password' instructions.
 
 
 ## Features
