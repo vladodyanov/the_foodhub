@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import render, redirect
 from django.utils.text import slugify
 
-from the_foodhub.accounts.forms import FoodHubUserCreationForm
+from the_foodhub.accounts.forms import FoodHubUserCreationForm, FoodHubProfileForm
 from the_foodhub.accounts.models import FoodHubUser, Profile
 from the_foodhub.accounts.utils import send_verification_email, check_role_vendor
 from the_foodhub.vendor.forms import FoodHubVendorCreationForm
@@ -65,6 +65,6 @@ def vendor_dashboard(request):
 
 
 def vendor_profile(request):
-    profile_form = UserProfileForm()
+    profile_form = FoodHubProfileForm()
     vendor_form = FoodHubVendorCreationForm()
     return render(request, 'vendor/vendor_profile.html')

@@ -1,5 +1,5 @@
 from django import forms
-from the_foodhub.accounts.models import FoodHubUser
+from the_foodhub.accounts.models import FoodHubUser, Profile
 
 
 class FoodHubUserCreationForm(forms.ModelForm):
@@ -22,4 +22,8 @@ class FoodHubUserCreationForm(forms.ModelForm):
 
 
 class FoodHubProfileForm(forms.ModelForm):
-    pass
+    class Meta:
+        model = Profile
+        fields = ("profile_picture", "cover_photo", "address_line_1", "address_line_2", "country", "region", "city",
+                  "pin_code", "latitude", "longitude" )
+
