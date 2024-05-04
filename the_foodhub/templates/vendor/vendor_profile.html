@@ -19,6 +19,7 @@
 								<div class="user-holder">
                                     <h5 class="text-uppercase">Manage Your Restaurant</h5>
 									<form action="{% url "vendor_profile" %}" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
 										<div class="form-fields-set">
 											<ul>
 												<li>
@@ -101,7 +102,7 @@
 											<div>
 												<div class="field-holder">
 													<div class="payment-holder input-button-loader">
-														<input class="update-restaurant" type="submit" value="Update Restaurant" onclick="location.href='restaurant-location.html';">
+														<input  type="submit" value="Update Restaurant">
 													</div>
 												</div>
 											</div>

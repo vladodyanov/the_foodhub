@@ -65,4 +65,6 @@ def vendor_dashboard(request):
 
 
 def vendor_profile(request):
+    profile_form = UserProfileForm()
+    vendor_form = FoodHubVendorCreationForm()
     return render(request, 'vendor/vendor_profile.html')

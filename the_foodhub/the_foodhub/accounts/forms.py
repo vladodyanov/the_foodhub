@@ -19,3 +19,7 @@ class FoodHubUserCreationForm(forms.ModelForm):
             raise forms.ValidationError(
                 "Password does not match!"
             )
+
+
+class FoodHubProfileForm(forms.ModelForm):
+    pass
