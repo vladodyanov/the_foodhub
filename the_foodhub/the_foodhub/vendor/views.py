@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.text import slugify
 
 from the_foodhub.accounts.forms import FoodHubUserCreationForm, FoodHubProfileForm
@@ -65,6 +65,15 @@ def vendor_dashboard(request):
 
 
 def vendor_profile(request):
-    profile_form = FoodHubProfileForm()
-    vendor_form = FoodHubVendorCreationForm()
-    return render(request, 'vendor/vendor_profile.html')
+    profile = get_object_or_404(Profile, user=request.user)
+    vendor = get_object_or_404(Vendor, user=request.user)
+
+    profile_form = FoodHubProfileForm(instance=profile)
+    vendor_form = FoodHubVendorCreationForm(instance=vendor)
+    context = {
+        'profile_form': profile_form,
+        'vendor_form': vendor_form,
+        'profile': profile,
+        'vendor': vendor,
+    }
+    return render(request, 'vendor/vendor_profile.html', context)
