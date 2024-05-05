@@ -49,7 +49,12 @@ TBA
 TBA
 
 ## Usage
-TBA
+To use the application, follow these steps:
+1. Register as a new user/vendor or log in if you already have an account and your account has been approved..
+2. Navigate through the different sections of the application, such as registration as a vendor, updating profile information, creating and managing your restaurant.
+3. Utilize the features available based on your role, whether you are a user or vendor.
+4. Explore the various functionalities and interact with the interface.
+
 
 ## Project Status
 Project is: UNDER DEVELOPMENT
