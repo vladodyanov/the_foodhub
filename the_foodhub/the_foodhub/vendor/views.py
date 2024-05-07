@@ -68,8 +68,21 @@ def vendor_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
     vendor = get_object_or_404(Vendor, user=request.user)
 
-    profile_form = FoodHubProfileForm(instance=profile)
-    vendor_form = FoodHubVendorCreationForm(instance=vendor)
+    if request.method == 'POST':
+        profile_form = FoodHubProfileForm(request.POST, request.FILES, instance=profile)
+        vendor_form = FoodHubVendorCreationForm(request.POST, request.FILES, instance=profile)
+        if profile_form.is_valid() and vendor_form.is_valid():
+            profile_form.save()
+            vendor_form.save()
+            messages.success(request, 'Settings updated successfully!')
+            return redirect('vendor_profile')
+        else:
+            print(profile_form.errors)
+            print(vendor_form.errors)
+    else:
+        profile_form = FoodHubProfileForm(instance=profile)
+        vendor_form = FoodHubVendorCreationForm(instance=vendor)
+
     context = {
         'profile_form': profile_form,
         'vendor_form': vendor_form,
