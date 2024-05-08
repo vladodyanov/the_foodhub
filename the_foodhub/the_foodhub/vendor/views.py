@@ -70,7 +70,7 @@ def vendor_profile(request):
 
     if request.method == 'POST':
         profile_form = FoodHubProfileForm(request.POST, request.FILES, instance=profile)
-        vendor_form = FoodHubVendorCreationForm(request.POST, request.FILES, instance=profile)
+        vendor_form = FoodHubVendorCreationForm(request.POST, request.FILES, instance=vendor)
         if profile_form.is_valid() and vendor_form.is_valid():
             profile_form.save()
             vendor_form.save()
