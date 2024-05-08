@@ -6,7 +6,7 @@ from the_foodhub.vendor.models import Vendor
 
 class FoodHubVendorCreationForm(forms.ModelForm):
     vendor_license = forms.FileField(
-        widget=forms.FileInput(attrs={'class': 'btn.btn-info'}),
+        widget=forms.FileInput(attrs={'class': 'btn btn-info'}),
         validators=[allow_only_images_validator],
     )
 
