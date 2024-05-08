@@ -1,5 +1,6 @@
 from django import forms
 from the_foodhub.accounts.models import FoodHubUser, Profile
+from the_foodhub.accounts.validators import allow_only_images_validator
 
 
 class FoodHubUserCreationForm(forms.ModelForm):
@@ -22,8 +23,14 @@ class FoodHubUserCreationForm(forms.ModelForm):
 
 
 class FoodHubProfileForm(forms.ModelForm):
-    profile_picture = forms.ImageField(widget=forms.FileInput(attrs={'class': 'btn.btn-info'}))
-    cover_photo = forms.ImageField(widget=forms.FileInput(attrs={'class': 'btn.btn-info'}))
+    profile_picture = forms.FileField(
+        widget=forms.FileInput(attrs={'class': 'btn.btn-info'}),
+        validators=[allow_only_images_validator],
+    )
+    cover_photo = forms.FileField(
+        widget=forms.FileInput(attrs={'class': 'btn.btn-info'}),
+        validators=[allow_only_images_validator],
+    )
 
     class Meta:
         model = Profile
