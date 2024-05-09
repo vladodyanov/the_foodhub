@@ -88,7 +88,7 @@ class FoodHubUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
 
 
 class Profile(models.Model):
-    MAX_ADDRESS_LENGTH = 50
+    MAX_ADDRESS_LENGTH = 250
     MAX_COUNTRY_LENGTH = 20
     MAX_STATE_LENGTH = 20
     MAX_REGION_LENGTH = 20
@@ -109,17 +109,13 @@ class Profile(models.Model):
         null=True
     )
 
-    address_line_1 = models.CharField(
+    address = models.CharField(
         max_length=MAX_ADDRESS_LENGTH,
         blank=True,
         null=True
     )
 
-    address_line_2 = models.CharField(
-        max_length=MAX_ADDRESS_LENGTH,
-        blank=True,
-        null=True
-    )
+
 
     country = models.CharField(
         max_length=MAX_COUNTRY_LENGTH,
@@ -171,9 +167,6 @@ class Profile(models.Model):
         blank=True,
         null=True,
     )
-
-    def full_address(self):
-        return f'{self.address_line_1}, {self.address_line_2}'
 
     def __str__(self):
         return self.user.email
