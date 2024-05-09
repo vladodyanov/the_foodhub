@@ -24,7 +24,7 @@ class FoodHubUserCreationForm(forms.ModelForm):
 
 class FoodHubProfileForm(forms.ModelForm):
     address = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'Enter address...'}))
+        widget=forms.TextInput(attrs={'placeholder': 'Enter address...', 'required': 'required'}))
 
     profile_picture = forms.FileField(
         widget=forms.FileInput(attrs={'class': 'btn btn-info'}),
