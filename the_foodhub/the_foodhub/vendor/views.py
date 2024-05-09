@@ -64,6 +64,8 @@ def vendor_dashboard(request):
     return render(request, 'vendor/vendor_dashboard.html')
 
 
+@login_required(login_url='signin_user')
+@user_passes_test(check_role_vendor)
 def vendor_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
     vendor = get_object_or_404(Vendor, user=request.user)
