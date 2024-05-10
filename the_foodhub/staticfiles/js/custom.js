@@ -5,7 +5,6 @@ autocomplete = new google.maps.places.Autocomplete(
     document.getElementById('id_address'),
     {
         types: ['geocode', 'establishment'],
-        //default in this app is "IN" - add your country code
         componentRestrictions: {'country': ['bg']},
     })
 // function to specify what should happen when the prediction is clicked
@@ -23,20 +22,14 @@ function onPlaceChanged (){
         // console.log('place name=>', place.name)
     }
 
-    // get the address components and assign them to the fields
-    // console.log(place);
     var geocoder = new google.maps.Geocoder()
     var address = document.getElementById('id_address').value
 
     geocoder.geocode({'address': address}, function(results, status){
-        // console.log('results=>', results)
-        // console.log('status=>', status)
         if(status == google.maps.GeocoderStatus.OK){
             var latitude = results[0].geometry.location.lat();
             var longitude = results[0].geometry.location.lng();
 
-            // console.log('lat=>', latitude);
-            // console.log('long=>', longitude);
             $('#id_latitude').val(latitude);
             $('#id_longitude').val(longitude);
 
@@ -54,7 +47,7 @@ function onPlaceChanged (){
             }
             // get state
             if(place.address_components[i].types[j] == 'administrative_area_level_1'){
-                $('#id_state').val(place.address_components[i].long_name);
+                $('#id_region').val(place.address_components[i].long_name);
             }
             // get city
             if(place.address_components[i].types[j] == 'locality'){
