@@ -52,6 +52,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'the_foodhub.accounts.context_processors.get_vendor',
+                'the_foodhub.accounts.context_processors.get_google_api_key',
             ],
         },
     },
