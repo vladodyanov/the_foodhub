@@ -9,4 +9,5 @@ urlpatterns = [
     path('', include('the_foodhub.web.urls')),
     path('accounts/', include('the_foodhub.accounts.urls')),
     path('vendor_accounts/', include('the_foodhub.vendor.urls')),
+    path('menu/', include('the_foodhub.menu.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
