@@ -1,5 +1,4 @@
 from django.db import models
-
 from the_foodhub.vendor.models import Vendor
 
 
@@ -30,6 +29,10 @@ class Category(models.Model):
     updated_at = models.DateTimeField(
         auto_now_add=True,
     )
+
+    class Meta:
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
 
     def __str__(self):
         return self.category_name
