@@ -1,7 +1,10 @@
 from django.contrib import admin
-
 from the_foodhub.menu.models import Category, FoodItem
 
-# Register your models here.
-admin.site.register(Category)
+
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('category_name',)}
+
+
+admin.site.register(Category, CategoryAdmin)
 admin.site.register(FoodItem)
