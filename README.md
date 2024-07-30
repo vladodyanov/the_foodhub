@@ -1,6 +1,5 @@
 # the_foodhub
 The FOODHUB is multi-vendor restaurant marketplace application with location-based search functionality, the ability to find nearby food providers, and various other complex features.
-The FOODHUB is multi-vendor restaurant marketplace application with location-based search functionality, the ability to find nearby food providers, and various other complex features.
 
 
 ## Table of Contents
